@@ -1,0 +1,36 @@
+// _Barraks_00 = [_ShooterPos,_inc,_UnitsPerRun,_RespawnTime,_Side,_TroopModels,_Direction,_Timeout,_Skill,_BarraksType] Call GPF_fnc_target;
+private ["_ShooterPos","_inc","_UnitsPerRun","_RespawnTime","_UnitSide","_Model","_dir","_Timeout","_Skill","_Count","_units","_BarraksGroup"];
+_ShooterPos  = param[0];
+_inc = param[1];
+_UnitsPerRun = param[2];
+_RespawnTime = param[3];
+_UnitSide = param[4];
+_Model = param[5];
+_dir = param[6];
+_Timeout = param[7];
+_Veh = param[8];
+_BarraksType = param[9];
+_Count = _inc;
+_units = [];
+_tty = 0;
+//_Score = _Score+1; 
+private _Barraks = createVehicle [_BarraksType, _ShooterPos, [], 0, "FORM"]; //_Barraks setDir _dir-180; _Barraks SetPos _ShooterPos;
+private _pos = [_Barraks, _Count, _dir] call BIS_fnc_relPos;
+private _TargetGroup = createGroup [_Side, false];
+private	_vehCount = count _Veh;
+for "_i" from 1 to _UnitsPerRun do {
+ if (_tty < _Timeout) Then {
+        if ((count _Veh) > 0) Then {vt = createVehicle [(SelectRandom _Veh), _pos, [], 0, "FORM"];vt SetDir _dir-90;vt SetPos _pos};
+        _unit = _TargetGroup  createUnit [(selectRandom _Model), _pos,[], 0,"FORM"];_unit setFormDir _dir-180;
+		_unit addEventHandler ["killed", "_d = _this select 0;_k = _this select 1;SystemChat format ['%1 Killed %2',name _k,name _d];"];
+		if ((count _Veh) > 0) Then {_unit moveInDriver vt; };
+        while {alive _unit} do {sleep 1; _tty = _tty + 1;};
+		_Count = _Count + _inc;
+        _pos = [_Barraks, _Count, _dir] call BIS_fnc_relPos;
+		{deleteVehicle _x} foreach [_unit];
+		if ((count _Veh) > 0) Then {deleteVehicle vt};
+		Sleep _RespawnTime; _tty = _tty + _RespawnTime;
+    };
+};
+deleteVehicle _Barraks;
+_TargetGroup;
