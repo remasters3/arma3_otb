@@ -1,0 +1,27 @@
+class Header
+{
+gameType = TDM;
+minPlayers = 1;
+maxPlayers = 16;
+};
+
+respawn = "3";
+respawndelay = "10";
+respawnOnStart = 1;
+respawnDialog = 1;
+respawnButton = 1;
+enableDebugConsole = 2;
+
+
+respawnTemplatesWest[] = {"EndMission","Counter","Tickets","MenuPosition"};
+respawnTemplatesEast[] = {"EndMission","Counter","Tickets","MenuPosition"};
+onLoadMission = "The Hunters must find and kill Old Greg before it's too late";
+
+#include "VVS\menu.h"
+#include "ASORGS\menu.hpp"
+class CfgFunctions
+{
+	#include "ASORGS\cfgfunctions.hpp"
+	#include "LVR\functions\functions.hpp"
+    #include "VVS\Functions.h"
+};

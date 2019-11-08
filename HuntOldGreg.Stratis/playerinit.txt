@@ -1,0 +1,1 @@
+this addEventHandler ["killed", {_this execVM "weaponrespawn.sqf";}]; this addWeapon "ItemMap";   this addWeapon "srifle_DMR_01_DMS_F";   this addbackpack "B_AssaultPack_mcamo";   this addMagazines ["10Rnd_762x51_Mag", 5];   this addVest "V_TacVest_khk";
