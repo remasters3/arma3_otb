@@ -42,6 +42,7 @@ while {_pCount < 360} Do {
  _pCount = _pCount+120;
  _SidePos = _SidePos + [_pos];
 };
+_SidePos = _SidePos + [_centerWorld];
 
 _SideLocations = [];
 _SideLocationNames = ["Blue","Red","Green","Civilian"];
@@ -63,11 +64,11 @@ if (isDedicated or isServer) then { _offset = 0;
          If (Side _x == West      ) Then {_westpos = _SidePos Select 0; _x SetPos [(_westpos Select 0)-_offset,(_westpos Select 1),0];};
          If (Side _x == East      ) Then {_eastpos = _SidePos Select 1; _x SetPos [(_eastpos Select 0)-_offset,(_eastpos Select 1),0];};
          If (Side _x == Resistance) Then {_guerrilapos = _SidePos Select 2; _x SetPos [(_guerrilapos Select 0)-_offset,(_guerrilapos Select 1),0];};
-         //If (Side _x == Civilian  ) Then {_civilianpos = _SidePos Select 3; _x SetPos [(_civilianpos Select 0)-_offset,(_civilianpos Select 1),0];};
+         If (Side _x == Civilian  ) Then {_civilianpos = _SidePos Select 3; _x SetPos [(_civilianpos Select 0)-_offset,(_civilianpos Select 1),0];};
         } Foreach Allunits;
         
         //[(_SidePos Select 0),(_SidePos Select 1),(_SidePos Select 2),_centerWorld] execVM 'markers.sqf';
-		[(_SidePos Select 0),(_SidePos Select 1),(_SidePos Select 2)] execVM 'markers.sqf';
+		[(_SidePos Select 0),(_SidePos Select 1),(_SidePos Select 2),(_SidePos Select 3)] execVM 'markers.sqf';
         private _outposts = [];
         { _outpost = [_x,0] Call GPF_fnc_worldOutpost; deleteVehicle (_outpost Select 0);deleteVehicle (_outpost Select 1); _outposts = _outposts + _outpost;} Foreach [(_SidePos Select 0),(_SidePos Select 1),(_SidePos Select 2)];
         
