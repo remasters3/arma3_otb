@@ -29,12 +29,13 @@ sleep 60;
  deleteMarker _x;
 } foreach _CZmarkers;
 */
+
 _WestTroopModels = ["B_sniper_F","B_Soldier_A_F","B_Soldier_AA_F","B_Soldier_AAA_F",
                     "B_Soldier_AAR_F","B_Soldier_AAT_F","B_Soldier_AR_F","B_Soldier_AT_F",
 					"B_soldier_exp_F","B_Soldier_F","B_engineer_F","B_medic_F","B_recon_exp_F",
 					"B_recon_F","B_recon_JTAC_F","B_recon_LAT_F","B_recon_M_F","B_recon_medic_F","B_recon_TL_F"];
 _pos = getPos player;
 _side = west;
-[_pos,_pos,5,10,_side,_WestTroopModels,0,300,[],"B_Truck_01_covered_F"] Call GPF_fnc_barraks;
+[_pos,_pos,5,10,_side,_WestTroopModels,0,300,[],"VR_Area_01_square_4x4_grey_F"] Call GPF_fnc_barraks;
 
 // [_safePos,_pos,5,10,_Side,_WestTroopModels,0,_timeout,[],_transport] Call GPF_fnc_barraks;

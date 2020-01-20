@@ -66,8 +66,8 @@ if (isDedicated or isServer) then { _offset = 0;
          //If (Side _x == Civilian  ) Then {_civilianpos = _SidePos Select 3; _x SetPos [(_civilianpos Select 0)-_offset,(_civilianpos Select 1),0];};
         } Foreach Allunits;
         
-        //[(_SidePos Select 0),(_SidePos Select 1),(_SidePos Select 2),(_SidePos Select 3)] execVM 'markers.sqf';
-		[(_SidePos Select 0),(_SidePos Select 1),(_SidePos Select 2)] execVM 'markers.sqf';
+        [(_SidePos Select 0),(_SidePos Select 1),(_SidePos Select 2),_centerWorld] execVM 'markers.sqf';
+		//[(_SidePos Select 0),(_SidePos Select 1),(_SidePos Select 2)] execVM 'markers.sqf';
         private _outposts = [];
         { _outpost = [_x,0] Call GPF_fnc_worldOutpost; deleteVehicle (_outpost Select 0);deleteVehicle (_outpost Select 1); _outposts = _outposts + _outpost;} Foreach [(_SidePos Select 0),(_SidePos Select 1),(_SidePos Select 2)];
         
