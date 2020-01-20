@@ -37,7 +37,7 @@ _WestTroopModels = ["B_sniper_F","B_Soldier_A_F","B_Soldier_AA_F","B_Soldier_AAA
 					"B_recon_F","B_recon_JTAC_F","B_recon_LAT_F","B_recon_M_F","B_recon_medic_F","B_recon_TL_F"
 ];
 
-_Mrkpos = GetMarkerPos "respawn_civilian"
+_Mrkpos = GetMarkerPos "respawn_wes"
 // OuterCentre Zone
 _pCount = 0;
 _OuterCentrePos = [];
@@ -48,6 +48,7 @@ while {_pCount < 360} Do {
  _OuterCentrePos = _OuterCentrePos + [_pos];
 };
 
+_OuterCentrePos = [(GetPos player)];
 {
 _pos = _x;
 _side = west;

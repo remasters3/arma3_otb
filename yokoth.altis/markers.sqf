@@ -1,7 +1,7 @@
 _westpos =_this select 0;
 _eastpos =_this select 1;
 _guerrilapos =_this select 2;
-//_civilianpos =_this select 3;
+_civilianpos =_this select 3;
 _markers = [];
 _offset = 10;
 _WestRespawn = createMarker ["respawn_west",[(_westpos Select 0)-_offset,(_westpos Select 1),0]];_markers = _markers + [_WestRespawn];
