@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14108.094,37.577267,18619.855};
-		dir[]={0.31505388,-0.5857892,-0.74678606};
-		up[]={0.22771879,0.81041604,-0.53977293};
-		aside[]={-0.9214043,-4.399044e-008,-0.38872626};
+		pos[]={14025.16,100.33623,18738.299};
+		dir[]={-0.62367916,-0.11654672,0.7730096};
+		up[]={-0.073244311,0.99316448,0.090782195};
+		aside[]={0.77830803,2.0925945e-006,0.62795895};
 	};
 };
 binarizationWanted=0;
@@ -32,6 +32,7 @@ addons[]=
 	"A3_Weapons_F_Exp",
 	"A3_Weapons_F_Pistols_Pistol_Heavy_02",
 	"A3_Weapons_F",
+	"A3_Weapons_F_Orange_Items",
 	"A3_Characters_F_Enoch_Facewear",
 	"A3_Characters_F_Orange_Headgear",
 	"A3_Characters_F_Enoch",
@@ -41,7 +42,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=7;
+		items=8;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -72,19 +73,26 @@ class AddonsMetaData
 		};
 		class Item4
 		{
+			className="A3_Weapons_F_Orange";
+			name="Arma 3 Orange - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item5
+		{
 			className="A3_Characters_F_Enoch";
 			name="Arma 3 Enoch - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item5
+		class Item6
 		{
 			className="A3_Characters_F_Orange";
 			name="Arma 3 Orange - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item6
+		class Item7
 		{
 			className="A3_Characters_F_Jets";
 			name="Arma 3 Jets - Characters and Clothing";
@@ -133,24 +141,65 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={13592.837,15.810583,12190.043};
+						position[]={13592.837,15.810533,12190.043};
 					};
 					side="East";
 					flags=7;
 					class Attributes
 					{
+						init="this setpos GetMarkerPos ""respawn_east"";";
 						isPlayable=1;
 					};
 					id=3;
 					type="O_Soldier_A_F";
-					atlOffset=5.0544739e-005;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male03PER";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.05;
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 			};
 			class Attributes
 			{
 			};
 			id=2;
-			atlOffset=5.0544739e-005;
 		};
 		class Item1
 		{
@@ -170,10 +219,53 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						init="this setpos GetMarkerPos ""respawn_guerrila"";";
 						isPlayable=1;
 					};
 					id=5;
 					type="I_Soldier_A_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male05GRE";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 			};
 			class Attributes
@@ -199,6 +291,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						init="this setpos GetMarkerPos ""respawn_Civilain"";";
 						name="debug_player";
 						isPlayer=1;
 						class Inventory
@@ -250,24 +343,14 @@ class Mission
 							};
 							class backpack
 							{
-								typeName="B_FieldPack_cbr";
+								typeName="C_IDAP_UAV_06_medical_backpack_F";
 								isBackpack=1;
-								class MagazineCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="1Rnd_HE_Grenade_shell";
-										count=3;
-										ammoLeft=1;
-									};
-								};
 							};
 							map="ItemMap";
 							compass="ItemCompass";
 							watch="ItemWatch";
 							radio="ItemRadio";
-							gps="ItemGPS";
+							gps="C_UavTerminal";
 							goggles="G_AirPurifyingRespirator_01_F";
 							headgear="H_Construction_headset_yellow_F";
 						};
@@ -335,17 +418,17 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={13589.832,15.917333,12189.84};
+						position[]={13589.832,15.917334,12189.84};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
+						init="this setpos GetMarkerPos ""respawn_west"";";
 						isPlayable=1;
 					};
 					id=280;
 					type="B_Soldier_A_F";
-					atlOffset=-9.5367432e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -394,7 +477,6 @@ class Mission
 			{
 			};
 			id=279;
-			atlOffset=-9.5367432e-007;
 		};
 	};
 };
