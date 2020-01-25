@@ -52,6 +52,7 @@ if (_debug) then {
 
 if (isDedicated or isServer) then {
 	[] Spawn {while {true} do{Sleep 300;{deleteVehicle _x;} forEach allDeadMen;{deleteVehicle _x;} forEach allDead;};};
+	["Initialize"] call BIS_fnc_dynamicGroups;
 
 };
 waitUntil {time > 20};

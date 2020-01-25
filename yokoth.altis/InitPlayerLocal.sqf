@@ -9,6 +9,9 @@ playerQuad = false;
 playerHeli = false;
 execVM "playerIcons.sqf";
 
+if (!isDedicated) then {
+    ["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
+};
 
 [] spawn {
     while {true} Do {

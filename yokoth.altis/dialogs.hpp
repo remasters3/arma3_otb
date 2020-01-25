@@ -248,7 +248,7 @@ class GPF_RSCButton500: RscButton
 	y = 0.533 * safezoneH + safezoneY;
 	w = 0.0928125 * safezoneW;
 	h = 0.022 * safezoneH;
-	action = "closeDialog 0;_pos = GetMarkerPos 'respawn_civilian';player setpos _pos;";
+	action = "closeDialog 0;player setpos [13602.2,12196.8,0];";
 };
 class GPF_RSCButton600: RscButton
 {
