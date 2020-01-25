@@ -32,7 +32,7 @@ while {_pCount < 360} Do {
 _OuterCentreLocations = [];
 _ct = 0;
 {_txt = Format ["L%1",_ct];_nl = ['NameLocal',_x,_txt]; _OuterCentreLocations = _OuterCentreLocations+[_nl];_ct = _ct+1;} Foreach _OuterCentrePos;
-[_OuterCentreLocations] Call GPF_fnc_makeLocations;
+//[_OuterCentreLocations] Call GPF_fnc_makeLocations;
 
 // Side Zones
 _pCount = 0;
@@ -68,7 +68,7 @@ if (isDedicated or isServer) then { _offset = 0;
         } Foreach Allunits;
         
         //[(_SidePos Select 0),(_SidePos Select 1),(_SidePos Select 2),_centerWorld] execVM 'markers.sqf';
-		[(_SidePos Select 0),(_SidePos Select 1),(_SidePos Select 2),(_SidePos Select 3)] execVM 'markers.sqf';
+		[(_SidePos Select 0),(_SidePos Select 1),(_SidePos Select 2),(_SidePos Select 3),_centerWorld] execVM 'markers.sqf';
         private _outposts = [];
         { _outpost = [_x,0] Call GPF_fnc_worldOutpost; deleteVehicle (_outpost Select 0);deleteVehicle (_outpost Select 1); _outposts = _outposts + _outpost;} Foreach [(_SidePos Select 0),(_SidePos Select 1),(_SidePos Select 2)];
         

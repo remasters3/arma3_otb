@@ -26,7 +26,7 @@ class GPF_rscButton0: RscButton
 	y = 0.566 * safezoneH + safezoneY;
 	w = 0.0928125 * safezoneW;
 	h = 0.022 * safezoneH;
-	action = "_items = items player; if ('ToolKit' in _items) then { _veh = vehicle player; if (player != _veh) Then {_veh setDammage 0};} Else {hint 'Needs Toolkit'};closeDialog 0";
+	action = "_items = items player; if ('ToolKit' in _items) then { _veh = vehicle player; if (player != _veh) Then {_veh setDammage 0};} Else {systemChat 'Needs Toolkit'};closeDialog 0";
 };
 class GPF_rscButton1: RscButton
 {

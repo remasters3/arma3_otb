@@ -8,7 +8,11 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=470;
+		nextID=479;
+	};
+	class MarkerIDProvider
+	{
+		nextID=1;
 	};
 	class LayerIndexProvider
 	{
@@ -16,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={13602.615,29.481573,12177.636};
-		dir[]={0.73449033,-0.25888792,0.62738848};
-		up[]={0.19689344,0.96588361,0.16818218};
-		aside[]={0.64953333,-2.9374496e-007,-0.76041865};
+		pos[]={13598.22,20.80121,12179.646};
+		dir[]={-0.27377084,-0.21531288,0.93750203};
+		up[]={-0.060378645,0.97650838,0.2067626};
+		aside[]={0.96001732,-1.1254269e-006,0.28034157};
 	};
 };
 binarizationWanted=0;
@@ -149,7 +153,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={13602.209,15.509106,12196.838};
+						position[]={13600.132,15.550214,12194.759};
 					};
 					side="Civilian";
 					flags=7;
@@ -455,304 +459,60 @@ class Mission
 		class Item3
 		{
 			dataType="Group";
-			side="West";
+			side="East";
 			class Entities
 			{
-				items=8;
+				items=1;
 				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={13602.325,15.534344,12193.756};
+						position[]={13594.679,15.612292,12194.619};
 					};
-					side="West";
+					side="East";
 					flags=7;
 					class Attributes
 					{
-						rank="SERGEANT";
 						isPlayable=1;
 					};
-					id=444;
-					type="B_Soldier_SL_F";
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13603.789,15.530011,12192.616};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-						isPlayable=1;
-					};
-					id=445;
-					type="B_Soldier_F";
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13600.734,15.564338,12193.097};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.44999999;
-						rank="CORPORAL";
-						isPlayable=1;
-					};
-					id=446;
-					type="B_soldier_LAT_F";
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13605.049,15.533584,12191.271};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-						isPlayable=1;
-					};
-					id=447;
-					type="B_soldier_M_F";
-				};
-				class Item4
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13599.407,15.602459,12192.391};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						rank="SERGEANT";
-						isPlayable=1;
-					};
-					id=448;
-					type="B_Soldier_TL_F";
-				};
-				class Item5
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13606.236,15.595253,12189.853};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.44999999;
-						rank="CORPORAL";
-						isPlayable=1;
-					};
-					id=449;
-					type="B_soldier_AR_F";
-				};
-				class Item6
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13597.915,15.667955,12191.544};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-						isPlayable=1;
-					};
-					id=450;
-					type="B_Soldier_A_F";
-				};
-				class Item7
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13607.09,15.643256,12188.557};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-						isPlayable=1;
-					};
-					id=451;
-					type="B_medic_F";
+					id=472;
+					type="O_Soldier_F";
 				};
 			};
 			class Attributes
 			{
 			};
-			id=443;
+			id=471;
 		};
 		class Item4
 		{
 			dataType="Group";
-			side="East";
+			side="West";
 			class Entities
 			{
-				items=8;
+				items=1;
 				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={13589.644,16.327639,12169.656};
+						position[]={13596.46,15.599364,12194.656};
 					};
-					side="East";
+					side="West";
 					flags=7;
 					class Attributes
 					{
-						rank="SERGEANT";
 						isPlayable=1;
 					};
-					id=453;
-					type="O_Soldier_SL_F";
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13590.81,16.400373,12167.62};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-						isPlayable=1;
-					};
-					id=454;
-					type="O_Soldier_F";
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13587.489,16.338654,12167.753};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						skill=0.44999999;
-						rank="CORPORAL";
-						isPlayable=1;
-					};
-					id=455;
-					type="O_Soldier_LAT_F";
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13591.89,16.483393,12165.715};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-						isPlayable=1;
-					};
-					id=456;
-					type="O_soldier_M_F";
-				};
-				class Item4
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13585.982,16.445641,12165.912};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						rank="SERGEANT";
-						isPlayable=1;
-					};
-					id=457;
-					type="O_Soldier_TL_F";
-				};
-				class Item5
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13592.743,16.48262,12163.623};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						skill=0.44999999;
-						rank="CORPORAL";
-						isPlayable=1;
-					};
-					id=458;
-					type="O_Soldier_AR_F";
-				};
-				class Item6
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13583.901,16.498789,12164.084};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-						isPlayable=1;
-					};
-					id=459;
-					type="O_Soldier_A_F";
-				};
-				class Item7
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13593.309,16.428085,12161.368};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-						isPlayable=1;
-					};
-					id=460;
-					type="O_medic_F";
+					id=474;
+					type="B_Soldier_F";
 				};
 			};
 			class Attributes
 			{
 			};
-			id=452;
+			id=473;
 		};
 		class Item5
 		{
@@ -760,150 +520,28 @@ class Mission
 			side="Independent";
 			class Entities
 			{
-				items=8;
+				items=1;
 				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={13581.733,16.04912,12154.1};
+						position[]={13598.241,15.575372,12194.763};
 					};
 					side="Independent";
 					flags=7;
 					class Attributes
 					{
-						rank="SERGEANT";
 						isPlayable=1;
 					};
-					id=462;
-					type="I_Soldier_SL_F";
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13583.555,15.763906,12152.471};
-					};
-					side="Independent";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-						isPlayable=1;
-					};
-					id=463;
+					id=476;
 					type="I_soldier_F";
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13579.884,16.035748,12153.06};
-					};
-					side="Independent";
-					flags=5;
-					class Attributes
-					{
-						skill=0.44999999;
-						rank="CORPORAL";
-						isPlayable=1;
-					};
-					id=464;
-					type="I_Soldier_LAT_F";
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13584.347,15.549945,12150.954};
-					};
-					side="Independent";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-						isPlayable=1;
-					};
-					id=465;
-					type="I_Soldier_M_F";
-				};
-				class Item4
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13578.396,15.974066,12151.749};
-					};
-					side="Independent";
-					flags=5;
-					class Attributes
-					{
-						rank="SERGEANT";
-						isPlayable=1;
-					};
-					id=466;
-					type="I_Soldier_TL_F";
-				};
-				class Item5
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13585.426,15.2769,12149.372};
-					};
-					side="Independent";
-					flags=5;
-					class Attributes
-					{
-						skill=0.44999999;
-						rank="CORPORAL";
-						isPlayable=1;
-					};
-					id=467;
-					type="I_Soldier_AR_F";
-				};
-				class Item6
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13576.668,15.871263,12149.982};
-					};
-					side="Independent";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-						isPlayable=1;
-					};
-					id=468;
-					type="I_Soldier_A_F";
-				};
-				class Item7
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13586.407,14.904,12147.669};
-					};
-					side="Independent";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-						isPlayable=1;
-					};
-					id=469;
-					type="I_medic_F";
 				};
 			};
 			class Attributes
 			{
 			};
-			id=461;
+			id=475;
 		};
 	};
 };

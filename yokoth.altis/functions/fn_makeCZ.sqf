@@ -11,7 +11,7 @@ private _list = [];
  _marker setMarkerColor _smc;
  _marker setMarkerSize [_targetRadias, _targetRadias];
  _marker setMarkerBrush "DIAGGRID";
- _marker setMarkerAlpha 0.5;
+ _marker setMarkerAlpha 0.7;
 
 
 [_marker,_targetRadias] Spawn {_marker = _this select 0; _targetRadias = _this Select 1; _czp = true;
