@@ -53,7 +53,7 @@ _SideFlagModels = [
 ];
 _nc = 0;
 {_txt = Format ["%1 H.Q.",(_SideLocationNames Select _nc)];_nl = ['NameCity',_x,_txt];_nc = _nc+1;_SideLocations = _SideLocations+[_nl];} Foreach _SidePos;
-[_SideLocations] Call GPF_fnc_makeLocations;
+//[_SideLocations] Call GPF_fnc_makeLocations;
 
 
 
@@ -76,7 +76,7 @@ if (isDedicated or isServer) then { _offset = 0;
 		//[_SidePos] execVM 'mannedvehicles.sqf';
 		_cz = [(_OuterCentrePos select 6),(_OuterCentrePos select 7)];
 		[_OuterCentrePos] execVM 'CZmarkers.sqf';
-		[_OuterCentrePos,20,50] execVM "cover.sqf",
+		[_OuterCentrePos,20,50] execVM "cover.sqf";
 		
 		_n = count _SideFlagModels;
 		for "_i" from 0 to _n-1 do {
