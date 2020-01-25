@@ -10,7 +10,7 @@ playerHeli = false;
 execVM "playerIcons.sqf";
 
 if (!isDedicated) then {
-    ["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
+    ["InitializePlayer", [player, true]] call BIS_fnc_dynamicGroups;
 };
 
 [] spawn {
