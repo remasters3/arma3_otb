@@ -12,14 +12,19 @@ _civilianRespawn = createMarker ["respawn_civilian",[(_civilianpos Select 0)-_of
 
 {_x setMarkerType "Empty"; } Foreach _markers;
 
- _txt = Format["Conflict Zone"];
+{
+ _sz = 375+_x;
+ _txt = Format["CZ%1",_sz];
  _smc = "colorwhite";
  _marker = createMarker [_txt,_centre]; 
  _marker setMarkerShape "ELLIPSE";
  _marker setMarkerText _txt;
  _marker setMarkerColor _smc;
- _marker setMarkerSize [600, 600];
+ _marker setMarkerSize [_sz,_sz];
  _marker setMarkerBrush "Border";
- _marker setMarkerAlpha 1;
+ _marker setMarkerAlpha 0.7;
+ _markers = _markers + [_marker];
+} foreach [0,250];
+
 MarkersDone = True;
 publicVariable "MarkersDone";

@@ -9,6 +9,20 @@ playerQuad = false;
 playerHeli = false;
 execVM "playerIcons.sqf";
 
+gpf_SpawnLandTransport = {
+	_pos = _this Select 0;
+	_quad = createVehicle ['B_Quadbike_01_F', _pos, [], 0, 'FORM'];
+	_quad addEventHandler ["GetOut", "_veh = _this select 0;if (count crew _veh <= 0) Then {deleteVehicle _veh;};playerQuad = false;"];
+	_quad
+};
+
+gpf_SpawnAirTransport = {
+	_pos = _this Select 0;
+	_quad = createVehicle ['C_Heli_light_01_digital_F', _pos, [], 0, 'FORM'];
+	_quad addEventHandler ["GetOut", "_veh = _this select 0;if (count crew _veh <= 0) Then {deleteVehicle _veh;};playerHeli = false;"];
+	_quad
+};
+
 if (!isDedicated) then {
     ["InitializePlayer", [player, true]] call BIS_fnc_dynamicGroups;
 };
@@ -18,16 +32,17 @@ if (!isDedicated) then {
 	   player enableFatigue false;
 	   waitUntil {inputAction "User20" > 0};
 	   [] Spawn GPF_fnc_playerDialog;sleep 1;
-	   };
+	};
 };
 
 [] Spawn { 
     while {true} Do {
+	 player enableFatigue false;
 	 systemChat Format ["%1 units active",Count AllUnits]; 
      Sleep 30;
 	 systemChat Format ["Be sure to bind custom action 20"];
 	 Sleep 30;
-	   };
+	};
 };
 
 [] Spawn {
@@ -39,10 +54,10 @@ if (!isDedicated) then {
 };
 
 _pos = GetPos _unit;
-BIS_fnc_garage_center = createVehicle [ 'Land_HelipadEmpty_F', _pos, [], 0, 'CAN_COLLIDE' ];
+//BIS_fnc_garage_center = createVehicle [ 'Land_HelipadEmpty_F', _pos, [], 0, 'CAN_COLLIDE' ];
 
 [_unit] Spawn { _unit = _this select 0;
-   waitUntil {(isNil "MarkersDone")};
+   waitUntil {(!isNil "MarkersDone")};
    If (Side _unit == West      ) Then {_pos = GetMarkerPos "respawn_west"; _unit SetPos _pos;};
    If (Side _unit == East      ) Then {_pos = GetMarkerPos "respawn_east"; _unit SetPos _pos;};
    If (Side _unit == Resistance) Then {_pos = GetMarkerPos "respawn_guerrila"; _unit SetPos _pos;};

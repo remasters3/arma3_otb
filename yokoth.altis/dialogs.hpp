@@ -46,7 +46,8 @@ class GPF_rscButton2: RscButton
 	y = 0.566 * safezoneH + safezoneY;
 	w = 0.0928125 * safezoneW;
 	h = 0.022 * safezoneH;
-	action = "if (playerHeli) Then { deleteVehicle hveh; hveh = createVehicle ['C_Heli_Light_01_civil_F', position player, [], 0, 'FORM']; playerHeli = true;} Else {hveh = createVehicle ['C_Heli_Light_01_civil_F', position player, [], 0, 'FORM']; playerHeli= true;};closeDialog 0;";
+	action = "if (playerHeli) Then { deleteVehicle hveh; hveh = [(GetPos player)] Call gpf_SpawnAirTransport; playerHeli = true;} Else {hveh = [(GetPos player)] Call gpf_SpawnAirTransport; playerHeli = true;};";
+	//action = "if (playerHeli) Then { deleteVehicle hveh; hveh = createVehicle ['C_Heli_Light_01_civil_F', position player, [], 0, 'FORM']; playerHeli = true;} Else {hveh = createVehicle ['C_Heli_Light_01_civil_F', position player, [], 0, 'FORM']; playerHeli= true;};closeDialog 0;";
 	//action = "closeDialog 0;[player]execVM'garage.sqf';";
 	
 };
@@ -58,7 +59,8 @@ class GPF_rscButton3: RscButton
 	y = 0.533 * safezoneH + safezoneY;
 	w = 0.0928125 * safezoneW;
 	h = 0.022 * safezoneH;
-	action = "if (playerQuad) Then { deleteVehicle pveh; pveh = createVehicle ['B_G_Quadbike_01_F', position player, [], 0, 'FORM']; playerQuad = true;} Else {pveh = createVehicle ['B_G_Quadbike_01_F', position player, [], 0, 'FORM']; playerQuad = true;};closeDialog 0";
+	action = "if (playerQuad) Then { deleteVehicle pveh; pveh = [(GetPos player)] Call gpf_SpawnLandTransport; playerQuad = true;} Else {pveh = [(GetPos player)] Call gpf_SpawnLandTransport; playerQuad = true;};";
+	// action = "if (playerQuad) Then { deleteVehicle pveh; pveh = createVehicle ['B_G_Quadbike_01_F', position player, [], 0, 'FORM']; playerQuad = true;} Else {pveh = createVehicle ['B_G_Quadbike_01_F', position player, [], 0, 'FORM']; playerQuad = true;};closeDialog 0";
 	// needs "playerQuad = false;" set in "InitPlayerLocal.sqf" file
 };
 class GPF_RSCButton4: RscButton
