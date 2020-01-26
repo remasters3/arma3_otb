@@ -18,9 +18,10 @@ gpf_SpawnLandTransport = {
 
 gpf_SpawnAirTransport = {
 	_pos = _this Select 0;
-	_quad = createVehicle ['C_Heli_light_01_digital_F', _pos, [], 0, 'FORM'];
-	_quad addEventHandler ["GetOut", "_veh = _this select 0;if (count crew _veh <= 0) Then {deleteVehicle _veh;};playerHeli = false;"];
-	_quad
+	_veh = createVehicle ['C_Heli_Light_01_civil_F', _pos, [], 0, 'FORM'];
+	[_veh,["Digital",1],["AddTread",1,"AddTread_Short",0]] call BIS_fnc_initVehicle;
+	_veh addEventHandler ["GetOut", "_veh = _this select 0;if (count crew _veh <= 0) Then {deleteVehicle _veh;};playerHeli = false;"];
+	_veh
 };
 
 if (!isDedicated) then {
