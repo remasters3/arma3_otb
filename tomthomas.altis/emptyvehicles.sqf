@@ -1,6 +1,6 @@
 _SidePos = _this select 0;
 
-_WestLightVeh = ["B_Heli_Transport_01_F"/*"B_Heli_Light_01_F","B_Heli_Transport_01_F","B_Heli_Transport_03_F"*/];
+_WestLightVeh = ["B_Heli_Light_01_F"/*,"B_Heli_Transport_01_F","B_Heli_Transport_03_F"*/];
 _EastLightVeh = ["O_Heli_Transport_04_bench_F"];
 _ResLightVeh = ["I_Heli_light_03_unarmed_F"];
 _vehs = [];
