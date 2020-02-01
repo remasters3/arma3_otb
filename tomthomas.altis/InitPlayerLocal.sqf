@@ -7,7 +7,6 @@ _isJIP = _this select 1;
 
 playerQuad = false;
 playerHeli = false;
-// execVM "playerIcons.sqf";
 
 gpf_SpawnLandTransport = {
 	_pos = _this Select 0;
@@ -63,4 +62,5 @@ if (!isDedicated) then {
    If (Side _unit == East      ) Then {_pos = GetMarkerPos "respawn_east"; _unit SetPos _pos;};
    If (Side _unit == Resistance) Then {_pos = GetMarkerPos "respawn_guerrila"; _unit SetPos _pos;};
    If (Side _unit == Civilian  ) Then {_pos = GetMarkerPos "respawn_civilian"; _unit SetPos _pos;};
+   [] execVM "playerIcons.sqf";
   };

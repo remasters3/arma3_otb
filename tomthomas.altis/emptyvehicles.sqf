@@ -1,8 +1,9 @@
 _SidePos = _this select 0;
 
-_WestLightVeh = ["B_Heli_Light_01_F"/*,"B_Heli_Transport_01_F","B_Heli_Transport_03_F"*/];
+_WestLightVeh = ["B_Heli_Transport_01_F"/*"B_Heli_Light_01_F","B_Heli_Transport_01_F","B_Heli_Transport_03_F"*/];
 _EastLightVeh = ["O_Heli_Transport_04_bench_F"];
 _ResLightVeh = ["I_Heli_light_03_unarmed_F"];
+_vehs = [];
 
 
 _CivLightVeh = ["I_Heli_light_03_dynamicLoadout_F"];
@@ -17,9 +18,13 @@ _Timeout = 600;
  _Models = _this Select 1;
  _Timeout = _this select 2;
  while {true} Do { 
-    [10,(_Models Select 0),(_SidePos Select 0),150,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;
-	[10,(_Models Select 1),(_SidePos Select 1),200,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;
-	[10,(_Models Select 2),(_SidePos Select 2),200,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;
+    _vehs = [10,(_Models Select 0),(_SidePos Select 0),150,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;{clearWeaponCargoGlobal _x;} forEach _vehs; {clearMagazineCargoGlobal _x;} forEach _vehs;
+	_vehs = [10,(_Models Select 1),(_SidePos Select 1),200,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;{clearWeaponCargoGlobal _x;} forEach _vehs; {clearMagazineCargoGlobal _x;} forEach _vehs;
+	_vehs = [10,(_Models Select 2),(_SidePos Select 2),200,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;{clearWeaponCargoGlobal _x;} forEach _vehs; {clearMagazineCargoGlobal _x;} forEach _vehs;
 	//[10,(_Models Select 3),(_SidePos Select 3),100,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;
  Sleep _Timeout;};
 };
+
+
+
+{clearWeaponCargoGlobal _x;} forEach _vehs; {clearMagazineCargoGlobal _x;} forEach _vehs;
