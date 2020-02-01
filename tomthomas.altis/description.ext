@@ -1,0 +1,31 @@
+class Header
+{
+gameType = TDM;
+minPlayers = 1;
+maxPlayers = 8;
+};
+
+ReviveMode = 1;
+ReviveUnconsciousStateMode = 0;
+ReviveRequiredTrait = 0;
+ReviveRequiredItems = 0;
+reviveDelay = 3;
+reviveBleedOutDelay = 120;
+corpseManagerMode = 1;
+enableDebugConsole = 1;
+
+respawn = "3";
+respawndelay = "5";
+respawnOnStart = 1;
+respawnDialog = 1;
+disabledAI = 1;
+briefing = 0;
+debriefing = 0;
+respawnTemplatesWest[] = {"EndMission","Counter","MenuPosition"};
+respawnTemplatesEast[] = {"EndMission","Counter","MenuPosition"};
+class CfgFunctions
+{
+	#include "functions\functions.hpp"
+};
+#include "defines.hpp"
+#include "dialogs.hpp"

@@ -1,0 +1,1 @@
+openMap true;waitUntil {inputAction 'ActionInMap' > 0};private _cords = (findDisplay 12 displayCtrl 51) ctrlMapScreenToWorld getMousePosition;_veh = vehicle player; _veh SetPos _cords;_textPos = Format ['%1',_cords];copyToClipboard _textPos;openMap false;

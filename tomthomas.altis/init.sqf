@@ -11,25 +11,8 @@ East setFriend [Resistance, 0];
 East setFriend [West, 0];
 West setFriend [Resistance, 0];
 West setFriend [East, 0];
-_centers = [
-	[19639,8404.59,0],
-	[23399.7,18899.8,0],
-	[12813,16671.7,0],
-	[11182.9,8721.09,0],
-	[11182.9,8721.09,0],
-	[21013,7317.08,0],
-	[16085,17000.2,0],
-	[16085,17000.2,0],
-	[25304.3,21808.3,0],
-	[9682.51,15142.2,0],
-	[14349.3,18946,0],
-	[21037.9,14758.4,0],
-	[6178.33,16244.8,0],
-	[8555.76,20909.2,0],
-	[25295.1,21807,0]
-	];
-_centerWorld = SelectRandom _centers;
-//_centerWorld = getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition");
+
+_centerWorld = getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition");
 
 //_debug = true;
 //if (_debug) then {
@@ -49,10 +32,9 @@ _centerWorld = SelectRandom _centers;
 [_centerWorld]execVM "places.sqf";
 
 
-
 if (isDedicated or isServer) then {
 	[] Spawn {while {true} do{Sleep 300;{deleteVehicle _x;} forEach allDeadMen;{deleteVehicle _x;} forEach allDead;};};
 	["Initialize", [true]] call BIS_fnc_dynamicGroups;
-
+	
 };
 waitUntil {time > 20};
