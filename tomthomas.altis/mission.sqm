@@ -5,17 +5,17 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=37;
+		nextID=40;
 	};
 	class Camera
 	{
-		pos[]={23013.004,419.08704,17488.379};
-		dir[]={0.52532905,-0.25240141,0.81270403};
-		up[]={0.1370298,0.96761686,0.21199098};
-		aside[]={0.83989477,-3.4968252e-008,-0.54290605};
+		pos[]={23460.344,28.190001,18397.467};
+		dir[]={0.30163428,-0.31335822,0.90046746};
+		up[]={0.099532872,0.94963306,0.29713538};
+		aside[]={0.94822443,-4.6640707e-008,-0.31763139};
 	};
 };
 binarizationWanted=0;
@@ -72,7 +72,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=13;
+		items=14;
 		class Item0
 		{
 			dataType="Group";
@@ -897,6 +897,77 @@ class Mission
 			{
 			};
 			id=23;
+		};
+		class Item13
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={23707.307,5.2314386,16197.996};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						name="debug_player";
+					};
+					id=38;
+					type="C_man_p_beggar_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male06GRE";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.03;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=37;
 		};
 	};
 };
