@@ -27,13 +27,13 @@ if (!isDedicated) then {
     ["InitializePlayer", [player, true]] call BIS_fnc_dynamicGroups;
 };
 
-//[] spawn {
-//    while {true} Do {
-//	   player enableFatigue false;
-//	   waitUntil {inputAction "User20" > 0};
-//	   [] Spawn GPF_fnc_playerDialog;sleep 1;
-//	};
-//};
+[] spawn {
+    while {true} Do {
+	   player enableFatigue false;
+	   waitUntil {inputAction "User20" > 0};
+	   [] Spawn GPF_fnc_playerDialog;sleep 1;
+	};
+};
 
 [] Spawn { 
     while {true} Do {
