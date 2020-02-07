@@ -1,7 +1,7 @@
 _centerWorld =  _this Select 0;
 private _timeout = 600;
-private _maxunits = 120;
-private _allPlaces = nearestLocations [_centerWorld, ["NameCity","NameVillage","NameCityCapital","NameLocal"],20000];
+private _maxunits = 60;
+private _allPlaces = nearestLocations [_centerWorld, ["NameVillage"],20000];
 _places = [];
 {_nl = locationPosition _x;_places = _places + [_nl];} Foreach _allPlaces;
 waitUntil {(!isNil "MarkersDone")};
@@ -132,6 +132,7 @@ if ((count Allunits) < _maxunits) Then {
 		private _transport = _x select 5;
 		private _evacPos = _x select 6;
 		private _pos = SelectRandom _places;
+		private _safePos =  [_pos,10,110, 10, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
 		
 		
 		private _enemySide = civilian;
@@ -155,16 +156,17 @@ if ((count Allunits) < _maxunits) Then {
 		};
 
 		//enemys
-		_sourceObjectT = createVehicle ["VR_Area_01_square_4x4_grey_F", [(_pos Select 0),(_pos Select 1),0], [], 0, "FORM"];
-		[_pos,_enemyHeli,_enemySide,_enemyTroops,_timeout,false] Call GPF_fnc_TroopDrop;
-		_sourceObjectT SetPos _pos;
+		_sourceObjectT = createVehicle ["VR_Area_01_square_4x4_grey_F", [(_safePos Select 0),(_safePos Select 1),0], [], 0, "FORM"];
+		[_safePos,_enemyHeli,_enemySide,_enemyTroops,_timeout,false] Call GPF_fnc_TroopDrop;
+		_sourceObjectT SetPos _safePos;
 		_ewu = [_sourceObjectT,500,45,360,_enemySide,_enemyTroops] call GPF_fnc_enemyWave;
 		[_ewu,_timeout]Spawn {_ewu = _this Select 0; _timeout = _this Select 1;Sleep _timeout;{deleteVehicle _x;} foreach _ewu;};
 		deleteVehicle _sourceObjectT;
 		
 		//good guys
 		private _numberOfunits = [(selectRandom _troops),(selectRandom _troops),(selectRandom _troops),(selectRandom _troops),(selectRandom _troops)];
-		_evac = [_numberOfunits,_side,_pos,_evacPos,40] call GPF_fnc_rescueEvac;
+		_evac = [_numberOfunits,_side,_safePos,_evacPos,40] call GPF_fnc_rescueEvac;
+		//[_evac,_timeout] spawn {_evac = _this select 0;_timeout = _this select 1; sleep _timeout;};
 		[_evac,_evacPos,_smoke] Spawn { _evac = _this select 0;_target = _this select 1;_smoke = _this select 2;
 			while {_cnt = count units _evac;_cnt > 0} Do {
 			_leader = leader _evac;
