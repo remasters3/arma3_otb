@@ -1,8 +1,13 @@
-_EvacPos = _this Select 0;
-_TargetPos = _this Select 1;
-_Side = _this Select 2;
-_Model = _this Select 3;
-_Wait = _this Select 4;
+private _EvacPos = _this Select 0;
+private _TargetPos = _this Select 1;
+private _Side = _this Select 2;
+private _Model = _this Select 3;
+private _Wait = _this Select 4;
+private _smoke = 'SmokeShellPurple';
+if (_Side == west) Then {_smoke = 'SmokeShellBlue';};
+if (_Side == east) Then {_smoke = 'SmokeShellRed';};
+if (_Side == resistance) Then {_smoke = 'SmokeShellGreen'};
+if (_Side == civilian) Then {_smoke = 'SmokeShellPurple'};
 
 _EvacHeliSpawn = [_EvacPos,1000,1100, 5, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
 _EvacHeli = [_EvacHeliSpawn, 0, _Model, _Side] call bis_fnc_spawnvehicle;
@@ -10,7 +15,7 @@ _EvacHeliV = _EvacHeli select 0;
 _EvacHeliGroup = group _EvacHeliV;
 _HeliPadE = "Land_HelipadEmpty_F" createVehicle _EvacPos;
 _HeliPadT = "Land_HelipadEmpty_F" createVehicle _TargetPos;
-_Signal = "SmokeShellPurple" createVehicle _EvacPos;
+_Signal = _smoke createVehicle _EvacPos;
 
 _way1 = _EvacHeliGroup addWaypoint [_EvacPos, 0];
 _way1 setWaypointType "TR UNLOAD";

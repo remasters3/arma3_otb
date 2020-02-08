@@ -114,13 +114,12 @@ Pickup_Zone = {
 							   
 if ((count Allunits) < _maxunits) Then {				   
     private _pos = SelectRandom _places;
-    private _exec = SelectRandom [0];
     private _safePos =  [_pos,10,110, 10, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
 	
     private _sideSettings = [
-	[west,_WestLightVeh,_WestTroopModels,(selectRandom _WestHelo),_WestPlane,"B_Truck_01_covered_F",(GetMarkerPos "marker_b_helipad")],
-	[east,_EastLightVeh,_EastTroopModels,(selectRandom _EastHelo),_EastPlane,"O_Truck_03_covered_F",(GetMarkerPos "marker_r_helipad")],
-	[resistance,_ResLightVeh,_ResTroopModels,(selectRandom _ResHelo),_ResPlane,"I_Truck_02_covered_F",(GetMarkerPos "marker_g_helipad")]
+	[west,_WestLightVeh,_WestTroopModels,(selectRandom _WestHelo),_WestPlane,"B_Heli_Transport_01_camo_F",(GetMarkerPos "marker_b_helipad")],
+	[east,_EastLightVeh,_EastTroopModels,(selectRandom _EastHelo),_EastPlane,"O_Heli_Transport_04_covered_F",(GetMarkerPos "marker_r_helipad")],
+	[resistance,_ResLightVeh,_ResTroopModels,(selectRandom _ResHelo),_ResPlane,"I_Heli_Transport_02_F",(GetMarkerPos "marker_g_helipad")]
 	];
 	
 	{
@@ -159,20 +158,25 @@ if ((count Allunits) < _maxunits) Then {
 		_sourceObjectT = createVehicle ["VR_Area_01_square_4x4_grey_F", [(_safePos Select 0),(_safePos Select 1),0], [], 0, "FORM"];
 		[_safePos,_enemyHeli,_enemySide,_enemyTroops,_timeout,false] Call GPF_fnc_TroopDrop;
 		_sourceObjectT SetPos _safePos;
-		_ewu = [_sourceObjectT,500,45,360,_enemySide,_enemyTroops] call GPF_fnc_enemyWave;
-		[_ewu,_timeout]Spawn {_ewu = _this Select 0; _timeout = _this Select 1;Sleep _timeout;{deleteVehicle _x;} foreach _ewu;};
+		// _ewu = [_sourceObjectT,500,45,360,_enemySide,_enemyTroops] call GPF_fnc_enemyWave;
+		// [_ewu,_timeout]Spawn {_ewu = _this Select 0; _timeout = _this Select 1;Sleep _timeout;{deleteVehicle _x;} foreach _ewu;};
 		deleteVehicle _sourceObjectT;
 		
 		//good guys
-		private _numberOfunits = [(selectRandom _troops),(selectRandom _troops),(selectRandom _troops),(selectRandom _troops),(selectRandom _troops)];
-		_evac = [_numberOfunits,_side,_safePos,_evacPos,40] call GPF_fnc_rescueEvac;
+		private _evacunits = [(selectRandom _troops),(selectRandom _troops),(selectRandom _troops),(selectRandom _troops),(selectRandom _troops)];
+		_evac = [_evacunits,_side,_safePos,_evacPos,40] call GPF_fnc_rescueEvac;
+		//[_safePos,_evacPos,_side,_transport,[40,41,42]] Call GPF_fnc_playerEvac;
+		
+		
+		
 		//[_evac,_timeout] spawn {_evac = _this select 0;_timeout = _this select 1; sleep _timeout;};
 		[_evac,_evacPos,_smoke] Spawn { _evac = _this select 0;_target = _this select 1;_smoke = _this select 2;
 			while {_cnt = count units _evac;_cnt > 0} Do {
 			_leader = leader _evac;
 			if ((vehicle _leader) == _leader) Then {
 				if ((_leader distance _target) > 100) Then {
-				_Signal = _smoke createVehicle GetPos _leader;
+				_smokepos =[(GetPos _leader),1,10, 1, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
+				_Signal = _smoke createVehicle _smokepos;
 				};
 			};
 			Sleep 60;
