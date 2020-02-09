@@ -58,9 +58,26 @@ if (!isDedicated) then {
 
 [_unit] Spawn { _unit = _this select 0;
    waitUntil {(!isNil "MarkersDone")};
-   If (Side _unit == West      ) Then {_pos = GetMarkerPos "respawn_west"; _unit SetPos _pos;};
-   If (Side _unit == East      ) Then {_pos = GetMarkerPos "respawn_east"; _unit SetPos _pos;};
-   If (Side _unit == Resistance) Then {_pos = GetMarkerPos "respawn_guerrila"; _unit SetPos _pos;};
-   If (Side _unit == Civilian  ) Then {_pos = GetMarkerPos "respawn_civilian"; _unit SetPos _pos;};
+   If (Side _unit == West      ) Then {
+   _pos = GetMarkerPos "respawn_west"; _unit SetPos _pos;
+   _EvacMarker = createMarkerLocal ["marker_helipad",(GetMarkerPos "marker_b_helipad")];
+   _EvacMarker setMarkerColorLocaL "ColorWEST";
+   _EvacMarker setMarkerTypeLocal "mil_flag";
+   };
+   If (Side _unit == East      ) Then {
+   _pos = GetMarkerPos "respawn_east"; _unit SetPos _pos;
+   _EvacMarker = createMarkerLocal ["marker_helipad",(GetMarkerPos "marker_r_helipad")];
+   _EvacMarker setMarkerColorLocaL "ColorEAST";
+   _EvacMarker setMarkerTypeLocal "mil_flag";
+   };
+   If (Side _unit == Resistance) Then {
+   _pos = GetMarkerPos "respawn_guerrila"; _unit SetPos _pos;
+   _EvacMarker = createMarkerLocal ["marker_helipad",(GetMarkerPos "marker_g_helipad")];
+   _EvacMarker setMarkerColorLocaL "ColorGUER";
+   _EvacMarker setMarkerTypeLocal "mil_flag";
+   };
+   If (Side _unit == Civilian  ) Then {
+   _pos = GetMarkerPos "respawn_civilian"; _unit SetPos _pos;
+   };
    [] execVM "playerIcons.sqf";
   };

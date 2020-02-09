@@ -2,8 +2,8 @@ private _centerWorld =  _this Select 0;
 	// Side Zones
 	_pCount = 0;
 	_SidePos = [
-	[1371.21,1403.97,0], //WEST
-	[11293.5,4653.34,0], //EAST
+	[1557.33,4810.43,0],//WEST
+	[11293.5,4653.34,0],//EAST
 	[7145.7,12206.4,0], // Resistance
 	[783.857,12276.5,0] //Civ
 ];
@@ -39,7 +39,7 @@ if (isDedicated or isServer) then { _offset = 0;
 	[_centerWorld] Spawn { _centerWorld = _this Select 0;while {true} do {[_centerWorld]execVM "demo.sqf",sleep 20;};};
 	
 
-}
+};
 
 
 /* private ["_NewLocations","_pCount","_LocObjectT","_placePos","_lString"];

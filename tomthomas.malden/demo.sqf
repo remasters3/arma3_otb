@@ -102,14 +102,6 @@ if (_enemySide == Resistance) Then {
 	_enemyHeli = SelectRandom _ResHelo;
 	_enemyTroops = _ResTroopModels;
 };					   
-
-Pickup_Zone = {
-	_sourceObjectT = createVehicle ["VR_Area_01_square_4x4_grey_F", [(_pos Select 0),(_pos Select 1),0], [], 0, "FORM"];
-	//[[(selectRandom _troops), (selectRandom _troops), (selectRandom _troops), (selectRandom _troops), (selectRandom _troops)],_Side,_safePos,_evacPos] exec 'gpf_rescue.sqf';
-	[_pos,_enemyHeli,_enemySide,_enemyTroops,_timeout,false] Call GPF_fnc_TroopDrop;
-	_sourceObjectT SetPos _pos;_ewu = [_sourceObjectT,500,45,360,_enemySide,_enemyTroops] call GPF_fnc_enemyWave;[_ewu,_timeout]Spawn {_ewu = _this Select 0; _timeout = _this Select 1;Sleep _timeout;{deleteVehicle _x;} foreach _ewu;};
-	deleteVehicle _sourceObjectT;
-};
 							   
 							   
 if ((count Allunits) < _maxunits) Then {				   

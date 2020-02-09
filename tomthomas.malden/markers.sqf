@@ -8,21 +8,21 @@ _offset = 10;
 // West Markers
 _WestRespawn = createMarker ["respawn_west",[(_westpos Select 0)-_offset,(_westpos Select 1),0]];_markers = _markers + [_WestRespawn];
 _WestEvacMarker = createMarker ["marker_b_helipad",[(_westpos Select 0),(_westpos Select 1),0]];
-_WestEvacMarker setMarkerColor "ColorWEST";
-_WestEvacMarker setMarkerType "mil_flag";
+/*_WestEvacMarker setMarkerColor "ColorWEST";
+_WestEvacMarker setMarkerType "mil_flag";*/
 
 //------------
 //East Markers
 _EastRespawn = createMarker ["respawn_east",[(_eastpos Select 0)-_offset,(_eastpos Select 1),0]];_markers = _markers + [_EastRespawn];
 _EastEvacMarker = createMarker ["marker_r_helipad",[(_eastpos Select 0),(_eastpos Select 1),0]];
-_EastEvacMarker setMarkerColor "ColorEast";
-_EastEvacMarker setMarkerType "mil_flag";
+/*_EastEvacMarker setMarkerColor "ColorEast";
+_EastEvacMarker setMarkerType "mil_flag";*/
 //------------
 // Resistance Markers
 _guerrilaRespawn = createMarker ["respawn_guerrila",[(_guerrilapos Select 0)-_offset,(_guerrilapos Select 1),0]];_markers = _markers + [_guerrilaRespawn];
 _GuerrilaEvacMarker = createMarker ["marker_g_helipad",[(_guerrilapos Select 0),(_guerrilapos Select 1),0]];
-_GuerrilaEvacMarker setMarkerColor "ColorGUER";
-_GuerrilaEvacMarker setMarkerType "mil_flag";
+/*_GuerrilaEvacMarker setMarkerColor "ColorGUER";
+_GuerrilaEvacMarker setMarkerType "mil_flag";*/
 //------------
 // Civ Markers
 _civilianRespawn = createMarker ["respawn_civilian",[(_civilianpos Select 0)-_offset,(_civilianpos Select 1),0]];_markers = _markers + [_civilianRespawn];

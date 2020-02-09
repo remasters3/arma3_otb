@@ -23,8 +23,10 @@ if (_debug) then {
    debug_player AddAction ["loopoff", "gameon = false;"];
    debug_player AddAction ["CivRespawnMarker","vehicle player SetPos (getMarkerPos 'respawn_civilian');"];    
    debug_player AddAction ["VKill","{_x SetDamage 1;} Foreach vehicles;"];   
-   debug_player AddAction ["EKill","{if (side _x == EAST) then { _x SetDamage 1;};} Foreach AllUnits;"]; 
-   debug_player AddAction ["WKill","{if (side _x == WEST) then { _x SetDamage 1;};} Foreach AllUnits;"]; 
+   debug_player AddAction ["EKill","{if (side _x == EAST) then { _x SetDamage 1;};} Foreach AllUnits;"];
+   debug_player AddAction ["WKill","{if (side _x == WEST) then { _x SetDamage 1;};} Foreach AllUnits;"];
+   debug_player AddAction ["RKill","{if (side _x == Resistance) then { _x SetDamage 1;};} Foreach AllUnits;"];
+   debug_player AddAction ["KillAll","{if (_x != debug_player) Then {_x SetDamage 1;};} Foreach AllUnits;"];
    debug_player AddAction ["Pos2Clip", "[(_this Select 0)] Call GPF_fnc_Pos2Clip;"];
 } else {deleteVehicle debug_player;};
 ////debug_player AddAction ["CenterWorld","_centerWorld = getArray(configFile >> 'CfgWorlds' >> worldName >> 'centerPosition');_scwPos = [(_centerWorld Select 0)+10,(_centerWorld Select 1)+10,0];vehicle player SetPos _scwPos;"]; 
