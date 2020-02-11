@@ -7,6 +7,7 @@ class GPF
 	class playerDialog {};
 	class playerSupport {};
 	class playerEvac {};
+	class playerMSG {};
 	class earPlugs {};
 	class Pos2Clip {};
 	class playerDelV {};
@@ -25,5 +26,6 @@ class GPF
 	class enemyWave {};
 	class rescueEvac {};
 	class makeCZ {};
+	class endgame {};
   };
 };

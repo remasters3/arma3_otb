@@ -8,7 +8,7 @@ _Timeout = param[4];
 _vehs = [];
 
     while { (_num) > (0)} Do {
-         _qPos = [_pos,20,_dist, 10, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
+         _qPos = [_pos,10,_dist, 10, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
          _veh = createVehicle [(selectRandom _Model), _qPos, [], 0, "FORM"];
          _vehs = _vehs + [_veh];
          _num = _num-1;
