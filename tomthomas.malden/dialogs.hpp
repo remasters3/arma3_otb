@@ -106,7 +106,7 @@ class GPF_RSCButton7: RscButton
 class GPF_RSCButton8: RscButton
 {
 	idc = 1608;
-	text = "Toggle Friendly"; //--- ToDo: Localize;
+	text = "Toggle HUD Markers"; //--- ToDo: Localize;
 	x = 0.391719 * safezoneW + safezoneX;
 	y = 0.665 * safezoneH + safezoneY;
 	w = 0.0928125 * safezoneW;

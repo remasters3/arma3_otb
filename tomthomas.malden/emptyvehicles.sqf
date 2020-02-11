@@ -3,7 +3,7 @@ _SidePos = _this select 0;
 _WestLightVeh = ["B_Heli_Light_01_F"/*,"B_Heli_Transport_01_F","B_Heli_Transport_03_F"*/];
 _EastLightVeh = ["B_Heli_Light_01_F" /*"O_Heli_Transport_04_bench_F"*/];
 _ResLightVeh = ["B_Heli_Light_01_F"/*"I_Heli_light_03_unarmed_F"*/];
-_globalheli = ["B_Heli_Light_01_F","B_Heli_Light_01_F","I_Heli_light_03_unarmed_F","O_Heli_Light_02_unarmed_F"/*,"I_Heli_Transport_02_F"*/];
+_globalheli = ["B_Heli_Light_01_F"/*,"B_Heli_Light_01_F","I_Heli_light_03_unarmed_F","O_Heli_Light_02_unarmed_F","I_Heli_Transport_02_F"*/];
 _vehs = [];
 
 
@@ -19,9 +19,9 @@ _Timeout = 600;
  _Models = _this Select 1;
  _Timeout = _this select 2;
  while {true} Do { 
-    _vehs = [10,(_Models Select 4),(_SidePos Select 0),200,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;{clearWeaponCargoGlobal _x;clearMagazineCargoGlobal _x;_x setObjectTextureGlobal [0, "images\bluec3.jpg"];} forEach _vehs;
-	_vehs = [10,(_Models Select 4),(_SidePos Select 1),200,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;{clearWeaponCargoGlobal _x;clearMagazineCargoGlobal _x;_x setObjectTextureGlobal [0, "images\redc3.jpg"];} forEach _vehs;
-	_vehs = [10,(_Models Select 4),(_SidePos Select 2),200,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;{clearWeaponCargoGlobal _x;clearMagazineCargoGlobal _x;_x setObjectTextureGlobal [0, "images\greenc3.jpg"];} forEach _vehs;
+    _vehs = [10,(_Models Select 4),(_SidePos Select 0),200,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;{clearWeaponCargoGlobal _x;clearMagazineCargoGlobal _x;_x setObjectTextureGlobal [0, "images\bigblackblue.jpg"];} forEach _vehs;
+	_vehs = [10,(_Models Select 4),(_SidePos Select 1),200,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;{clearWeaponCargoGlobal _x;clearMagazineCargoGlobal _x;_x setObjectTextureGlobal [0, "images\bigblackred.jpg"];} forEach _vehs;
+	_vehs = [10,(_Models Select 4),(_SidePos Select 2),200,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;{clearWeaponCargoGlobal _x;clearMagazineCargoGlobal _x;_x setObjectTextureGlobal [0, "images\bigblackgreen.jpg"];} forEach _vehs;
 	//[10,(_Models Select 3),(_SidePos Select 3),100,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;
  Sleep _Timeout;};
 };

@@ -1,6 +1,6 @@
 _centerWorld =  _this Select 0;
 private _timeout = 600;
-private _maxunits = 60;
+private _maxunits = 30;
 private _allPlaces = nearestLocations [_centerWorld, ["NameVillage","NameCity","Mount","NameCityCapital","NameLocal"],20000];
 _places = [];
 {_nl = locationPosition _x;_places = _places + [_nl];} Foreach _allPlaces;
@@ -169,14 +169,12 @@ if ((count Allunits) < _maxunits) Then {
 				if ((_leader distance _target) > 100) Then {
 				_smokepos =[(GetPos _leader),1,10, 1, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
 				_Signal = _smoke createVehicle _smokepos;
+				_leader setVariable ["evacleader",true,true];
 				};
 			};
 			Sleep 60;
 			};	
 		};
 		//systemchat format ["%1",_evac];
-	} Foreach _sideSettings;
-
-	
+	} Foreach _sideSettings;	
 };
-
