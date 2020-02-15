@@ -6,9 +6,9 @@ private _ResLightVeh = ["B_Heli_Light_01_F"/*"I_Heli_light_03_unarmed_F"*/];
 private _globalheli = ["B_Heli_Light_01_F"/*,"B_Heli_Light_01_F","I_Heli_light_03_unarmed_F","O_Heli_Light_02_unarmed_F","I_Heli_Transport_02_F"*/];
 private _vehs = [];
 private _params = [
-	[(_SidePos Select 0),"images\default.jpg"], 
-	[(_SidePos Select 1),"images\default.jpg"], 
-	[(_SidePos Select 2),"images\default.jpg"]    
+	[(_SidePos Select 0)], 
+	[(_SidePos Select 1)], 
+	[(_SidePos Select 2)]    
 ];
 
 _CivLightVeh = ["I_Heli_light_03_dynamicLoadout_F"];
@@ -29,7 +29,7 @@ _Timeout = 10*60;
  
 	{
 		private _fpos = _x select 0;
-		private _txtr = _x select 1;
+		//private _txtr = _x select 1;
 		private _index = 0;
 		private _dir = 0;
 		private _pCount = 0;
@@ -39,7 +39,7 @@ _Timeout = 10*60;
 		private _apos = [_fpos, 20*2, _pCount] call BIS_fnc_relPos;
 		private _dir = _pCount;
 		_pCount = _pCount+_div;
-		_aveh = [_apos,_dir,(_models select _index),_rad,_txtr] call GPF_fnc_SpawnVehicle;
+		_aveh = [_apos,_dir,(_models select _index),_rad/*,_txtr*/] call GPF_fnc_SpawnVehicle;
 		_index = _index+1;
 		};
 
