@@ -21,7 +21,7 @@ if (_debug) then {
    debug_player AddAction ["Heal","_this Select 0 SetDamage 0"];    
    debug_player addAction ["debug.sqf", "execVM 'debug.sqf';"];
    debug_player AddAction ["loopoff", "gameon = false;"];
-   debug_player AddAction ["CivRespawnMarker","vehicle player SetPos (getMarkerPos 'respawn_civilian');"];    
+   debug_player AddAction ["CivRespawnMarker","vehicle player SetPos [559.729,1423.49,81.3931];"];    /*(getMarkerPos 'respawn_civilian');*/
    debug_player AddAction ["VKill","{_x SetDamage 1;} Foreach vehicles;"];   
    debug_player AddAction ["EKill","{if (side _x == EAST) then { _x SetDamage 1;};} Foreach AllUnits;"];
    debug_player AddAction ["WKill","{if (side _x == WEST) then { _x SetDamage 1;};} Foreach AllUnits;"];

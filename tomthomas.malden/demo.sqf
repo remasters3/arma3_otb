@@ -5,8 +5,6 @@ private _allPlaces = nearestLocations [_centerWorld, ["NameVillage","NameCity","
 _places = [];
 {_nl = locationPosition _x;_places = _places + [_nl];} Foreach _allPlaces;
 waitUntil {(!isNil "MarkersDone")};
-//{SystemChat Format ["%1",_x];player SetPos _x;sleep 2;} Foreach _places;
-//_places = _places + [[(_centerWorld Select 0),(_centerWorld Select 1),0]];
 
 _EastTroopModels = ["O_SoldierU_SL_F","O_soldierU_repair_F","O_soldierU_medic_F",
                     "O_sniper_F","O_Soldier_A_F","O_Soldier_AA_F","O_Soldier_AAA_F",
