@@ -6,9 +6,9 @@ private _ResLightVeh = ["B_Heli_Light_01_F"/*"I_Heli_light_03_unarmed_F"*/];
 private _globalheli = ["B_Heli_Light_01_F"/*,"B_Heli_Light_01_F","I_Heli_light_03_unarmed_F","O_Heli_Light_02_unarmed_F","I_Heli_Transport_02_F"*/];
 private _vehs = [];
 private _params = [
-	[(_SidePos Select 0),"images\bc1.jpg"], 
-	[(_SidePos Select 1),"images\rc1.jpg"], 
-	[(_SidePos Select 2),"images\gc1.jpg"]    
+	[(_SidePos Select 0),"images\default.jpg"], 
+	[(_SidePos Select 1),"images\default.jpg"], 
+	[(_SidePos Select 2),"images\default.jpg"]    
 ];
 
 _CivLightVeh = ["I_Heli_light_03_dynamicLoadout_F"];
