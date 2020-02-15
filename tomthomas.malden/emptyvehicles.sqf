@@ -21,7 +21,7 @@ _Timeout = 10*60;
 [_params,_Timeout] Spawn { 
  private _params = _this Select 0;
  private _Timeout = _this select 1;
- private _models = ['B_Heli_Light_01_F','O_Heli_Light_02_unarmed_F','I_Heli_light_03_unarmed_F'];
+ private _models = ['B_Heli_Light_01_F','O_Heli_Light_02_unarmed_F','I_Heli_light_03_unarmed_F','B_Heli_Transport_03_F','I_Heli_Transport_02_F'];
  private _index = 0;
  private _div = 360/(count _models);
  while {true} Do {
