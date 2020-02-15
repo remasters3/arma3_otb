@@ -1,7 +1,7 @@
 _player = _this select 0;
 _benifits = [
- "76561198121313381",
- "76561197971753110"
+ "76561198121313381", //sadass
+ "76561197971753110"  //remasters
 ];
 private _isBenifit = false;
 private _uid = getPlayerUID _player;
