@@ -56,7 +56,7 @@ _Timeout = 10*60;
 	{
 	_veh = _x call GPF_fnc_SpawnVehicle;
 	} forEach [
-		[[814.195,12123,0],0,"B_Heli_Light_01_F",10,"images\cc.jpg"],
+		[[814.195,12123,0],0,"B_Heli_Light_01_F",10,"images\cc1.jpg"],
 		[[781.714,12139.7,0],0,"C_Plane_Civil_01_racing_F",10],
 		[[757.087,12141.1,0],0,"C_Plane_Civil_01_F",10],
 		[[700.482,12169.2,0],0,"C_Plane_Civil_01_F",10],
