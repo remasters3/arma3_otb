@@ -155,7 +155,7 @@ if ((count Allunits) < _maxunits) Then {
 		//good guys
 		private _evacunits = [(selectRandom _troops),(selectRandom _troops),(selectRandom _troops),(selectRandom _troops),(selectRandom _troops)];
 		_evac = [_evacunits,_side,_safePos,_evacPos,40] call GPF_fnc_rescueEvac;
-		[_safePos,_evacPos,_side,_transport,[40,41,42]] Call GPF_fnc_playerEvac;
+		//[_safePos,_evacPos,_side,_transport,[40,41,42]] Call GPF_fnc_playerEvac;
 		private _numberOfunits = count _evacunits;
 		private _TotalDistance = _safePos distance _evacPos;
 		private _ppu = _TotalDistance/_numberOfunits ;
