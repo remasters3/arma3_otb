@@ -188,11 +188,11 @@ if ((count Allunits) < _maxunits) Then {
 				_debugPlayer = (selectRandom Allplayers);
 				
 				if (_dist < 40) Then {
+				side _unit addScoreSide _score;
 					if ((count _humanCrew) > 0) Then { 
 						{
-							_txt = Format ["%1 has extracted %2. %3 + %4 points.",name _x,name _unit, side _x,_score];
+							_txt = Format ["%1 has extracted %2. %3+%4.",name _x,name _unit, side _x,_score];
 							[_txt,_x,0] remoteExecCall ["GPF_fnc_playerMSG",0, false];
-							side _x addScoreSide _score;
 							_x addScore _score;
 						} Foreach _humanCrew;
 					};
