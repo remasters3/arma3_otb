@@ -14,7 +14,7 @@ West setFriend [East, 0];
 
 _centerWorld = getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition");
 
-_debug = true;
+_debug = false;
 if (_debug) then {
    //debug_player setPos _centerWorld;
    debug_player AddAction ["Kill", "_veh = cursorTarget; _veh SetDamage 1;"];
@@ -28,6 +28,14 @@ if (_debug) then {
    debug_player AddAction ["RKill","{if (side _x == Resistance) then { _x SetDamage 1;};} Foreach AllUnits;"];
    debug_player AddAction ["KillAll","{if (_x != debug_player) Then {_x SetDamage 1;};} Foreach AllUnits;"];
    debug_player AddAction ["Pos2Clip", "[(_this Select 0)] Call GPF_fnc_Pos2Clip;"];
+   
+   []Spawn{
+		while {true} do {
+		hint format ["| WEST:%1 | EAST:%2 | GUER:%3 |",scoreSide west,scoreSide east,scoreSide resistance];
+		sleep 1;
+		};
+	};
+   
 } else {deleteVehicle debug_player;};
 ////debug_player AddAction ["CenterWorld","_centerWorld = getArray(configFile >> 'CfgWorlds' >> worldName >> 'centerPosition');_scwPos = [(_centerWorld Select 0)+10,(_centerWorld Select 1)+10,0];vehicle player SetPos _scwPos;"]; 
 
