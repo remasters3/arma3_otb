@@ -6,5 +6,5 @@ _top = 500;
 		{if ((scoreSide _x) >= _top) Then {[_x] call GPF_fnc_endgame;_GameOn = false;};} foreach [west,east,resistance];
 		sleep 1;
 	};
-	["LOSER", false, true,true, true]call BIS_fnc_endMission;
+	//["LOSER", false, true,true, true]call BIS_fnc_endMission;
 };
