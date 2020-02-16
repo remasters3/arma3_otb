@@ -158,7 +158,8 @@ if ((count Allunits) < _maxunits) Then {
 		//[_safePos,_evacPos,_side,_transport,[40,41,42]] Call GPF_fnc_playerEvac;
 		private _numberOfunits = count _evacunits;
 		private _TotalDistance = _safePos distance _evacPos;
-		private _score = floor (_TotalDistance/_numberOfunits);
+		private _ppu = _TotalDistance/_numberOfunits
+		private _score = floor (_ppu/10);
 		
 		{
 			_x setVariable["gpf_reward",_score,false];
