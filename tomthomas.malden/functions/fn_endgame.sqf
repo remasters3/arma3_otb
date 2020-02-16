@@ -7,3 +7,5 @@ _winner = _this select 0;
 		["LOSER", false, true,true, true] remoteExecCall ["BIS_fnc_endMission",[_x]];
 	}
 } foreach allplayers;
+
+if (isDedicated or isServer) then {["END1", false, true,true, true]call BIS_fnc_endMission;};
