@@ -45,6 +45,13 @@ if (!isDedicated) then {
 	};
 };
 
+[]Spawn{
+	while {true} do {
+	hint format ["|B:%1|R:%2|G:%3|",scoreSide west,scoreSide east,scoreSide resistance];
+	sleep 1;
+	};
+};
+
 //[] Spawn {
 //	scores = Format ["| Blue 0/8 | Red 0/8 | Green 0/8 |"];
 //	while {true} do {

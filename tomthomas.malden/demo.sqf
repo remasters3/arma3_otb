@@ -156,6 +156,51 @@ if ((count Allunits) < _maxunits) Then {
 		private _evacunits = [(selectRandom _troops),(selectRandom _troops),(selectRandom _troops),(selectRandom _troops),(selectRandom _troops)];
 		_evac = [_evacunits,_side,_safePos,_evacPos,40] call GPF_fnc_rescueEvac;
 		//[_safePos,_evacPos,_side,_transport,[40,41,42]] Call GPF_fnc_playerEvac;
+		private _numberOfunits = count _evacunits;
+		private _TotalDistance = _safePos distance _evacPos;
+		private _score = floor (_TotalDistance/_numberOfunits);
+		
+		{
+			_x setVariable["gpf_reward",_score,false];
+			_x setVariable["gpf_target_pos",_evacPos,false];
+			_x addEventHandler ["GetInMan", {
+			_unit = _this select 0;
+			_veh = vehicle _unit;
+			_unit setVariable["gpf_rescue_veh",_veh,false];
+			_txt = Format ["%1 onboard.", name _unit];
+			[_txt,(driver _veh),0] remoteExecCall ["GPF_fnc_playerMSG",0, false];
+			}];
+			
+			
+			_x addEventHandler ["GetOutMan", {
+				_unit = _this select 0;
+				_veh = _unit getVariable 'gpf_rescue_veh';
+				_driver = driver _veh;
+				_reward = _unit getVariable 'gpf_reward';
+				_target = _unit getVariable 'gpf_target_pos';
+				_unitPos = GetPos _unit;
+				_dist = _unitPos distance _target;
+				_humanCrew = [];
+				{if(isplayer _x) Then {_humanCrew = _humanCrew+[_x]};} Foreach crew _veh;
+				_crewCount = count _humanCrew;
+				_score = floor (_reward/_crewCount);
+				_debugPlayer = (selectRandom Allplayers);
+				
+				if (_dist < 40) Then {
+					if ((count _humanCrew) > 0) Then { 
+						{
+							// [_x,_score]execVM 'gpf_score.sqf';
+							//[(Format ["%1 Evacuation",group _unit]),(Format ["%1 Has evacuated %2 to safety",name _x,name _unit]),_x] execvm "gpf_fn_msg.sqf";
+							_txt = Format ["%1 Has evacuated %2 to safety. %3 earns %4 points.",name _x,name _unit, side _x,_score];
+							[_txt,_x,0] remoteExecCall ["GPF_fnc_playerMSG",0, false];
+							side _x addScoreSide _score;
+						} Foreach _humanCrew;
+					};
+				};
+			}];
+			
+			
+		} foreach units _evac;
 		
 		
 		
