@@ -257,12 +257,12 @@ class GPF_RSCButton400: RscButton
 class GPF_RSCButton500: RscButton
 {
 	idc = 1605;
-	text = "Admin Tower"; //--- ToDo: Localize;
+	text = "home"; //--- ToDo: Localize;
 	x = 0.489687 * safezoneW + safezoneX;
 	y = 0.533 * safezoneH + safezoneY;
 	w = 0.0928125 * safezoneW;
 	h = 0.022 * safezoneH;
-	action = "closeDialog 0;player setpos [13602.2,12196.8,0];";
+	action = "closeDialog 0;player setpos GetMarkerPos 'respawn_civilian';";
 };
 class GPF_RSCButton600: RscButton
 {
@@ -287,7 +287,7 @@ class GPF_RSCButton700: RscButton
 class GPF_RSCButton800: RscButton
 {
 	idc = 1608;
-	text = "Toggle Friendly"; //--- ToDo: Localize;
+	text = "Toggle HUD Icons"; //--- ToDo: Localize;
 	x = 0.391719 * safezoneW + safezoneX;
 	y = 0.665 * safezoneH + safezoneY;
 	w = 0.0928125 * safezoneW;
