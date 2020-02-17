@@ -134,7 +134,7 @@ class GPF_RSCButton9: RscButton
 class GPF_RSCButton11: RscButton
 {
 	idc = 1610;
-	text = "VIP Menu"; //--- ToDo: Localize;
+	text = ""; //--- ToDo: Localize;
 	x = 0.44 * safezoneW + safezoneX;
 	y = 0.698 * safezoneH + safezoneY;
 	w = 0.0928125 * safezoneW;
