@@ -318,12 +318,13 @@ class GPF_RSCButton1100: RscButton
 class GPF_RSCButton1000: RscButton
 {
 	idc = 1611;
-	text = "Placeholder_3"; //--- ToDo: Localize;
+	text = "spawn heli"; //--- ToDo: Localize;
 	x = 0.391719 * safezoneW + safezoneX;
 	y = 0.698 * safezoneH + safezoneY;
 	w = 0.0928125 * safezoneW;
 	h = 0.022 * safezoneH;
-	action = "closeDialog 0";
+	action = "if (playerHeli) Then { deleteVehicle hveh; hveh = [(GetPos player)] Call gpf_SpawnAirTransport; playerHeli = true;} Else {hveh = [(GetPos player)] Call gpf_SpawnAirTransport; playerHeli = true;};closeDialog 0";
+	//action = "closeDialog 0";
 };
 class GPF_RSCButton1300: RscButton
 {
