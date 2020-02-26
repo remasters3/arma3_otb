@@ -25,6 +25,6 @@ private _centerWorld =  _this Select 0;
 if (isDedicated or isServer) then {
 	[(_SidePos Select 0),(_SidePos Select 1),(_SidePos Select 2),(_SidePos Select 3),_centerWorld] execVM 'markers.sqf';
 	[_SidePos] execVM 'emptyvehicles.sqf';
-	[_centerWorld] Spawn { _centerWorld = _this Select 0;while {true} do {[_centerWorld]execVM "demo.sqf",sleep 20;};};
+	[_centerWorld] Spawn { _centerWorld = _this Select 0;while {true} do {[_centerWorld]execVM "demo.sqf",sleep 120;};};
 	//[]execVM "mission_status.sqf";
 };
