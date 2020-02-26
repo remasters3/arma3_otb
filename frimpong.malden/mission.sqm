@@ -112,7 +112,6 @@ class Mission
 					class Attributes
 					{
 						name="debug_player";
-						isPlayable=1;
 					};
 					id=3;
 					type="C_Man_ConstructionWorker_01_Red_F";
