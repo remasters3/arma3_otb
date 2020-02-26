@@ -110,12 +110,12 @@ _cnt = {alive _x} count _enemys;
 _thunderNaNaNaNANaNaNaNA = _EastLightVeh+_EastHelo+_EastLightVeh+_EastLightVeh+_EastLightVeh+_EastLightVeh+_EastLightVeh+_EastLightVeh;
 
 if (_cnt < _maxunits) Then {
-private _result = [getPos player, 180, (SelectRandom _thunderNaNaNaNANaNaNaNA), east] call BIS_fnc_spawnVehicle;
+private _result = [[5935.45,10738.5,0], 90, (SelectRandom _thunderNaNaNaNANaNaNaNA), east] call BIS_fnc_spawnVehicle;
 _result params ["_veh", "_crew", "_group"];
 _unit = leader _group;
 _posistions=[];
-_veh SetDir 90;
-_veh SetPos [5935.45,10738.5,0];
+//_veh SetDir 90;
+//_veh SetPos [5935.45,10738.5,0];
 systemchat format ["%1",_posistions];
 _nbr = selectRandom [0,1];
 _posistions = [_nbr] Call GPF_fnc_MaldenRoute;
