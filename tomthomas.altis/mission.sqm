@@ -8,14 +8,14 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=40;
+		nextID=45;
 	};
 	class Camera
 	{
-		pos[]={23519.484,181.21214,18782.459};
-		dir[]={0.21887,-0.23359439,0.94739753};
-		up[]={0.05258178,0.97233152,0.2276058};
-		aside[]={0.97435218,-1.3887984e-008,-0.2250974};
+		pos[]={9266.3262,50.742466,21478.975};
+		dir[]={-0.55082136,-0.72998208,-0.40489244};
+		up[]={-0.58816487,0.68344909,-0.4323436};
+		aside[]={-0.59233874,5.6484714e-007,0.80582988};
 	};
 };
 binarizationWanted=0;
@@ -72,7 +72,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=14;
+		items=11;
 		class Item0
 		{
 			dataType="Group";
@@ -207,35 +207,6 @@ class Mission
 		};
 		class Item3
 		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={23721.715,5.2314386,16198.252};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-						isPlayable=1;
-					};
-					id=7;
-					type="B_Helipilot_F";
-				};
-			};
-			class Attributes
-			{
-			};
-			id=6;
-		};
-		class Item4
-		{
 			dataType="Logic";
 			class PositionInfo
 			{
@@ -326,7 +297,7 @@ class Mission
 				nAttributes=4;
 			};
 		};
-		class Item5
+		class Item4
 		{
 			dataType="Group";
 			side="East";
@@ -397,7 +368,7 @@ class Mission
 			};
 			id=9;
 		};
-		class Item6
+		class Item5
 		{
 			dataType="Group";
 			side="East";
@@ -468,7 +439,7 @@ class Mission
 			};
 			id=11;
 		};
-		class Item7
+		class Item6
 		{
 			dataType="Group";
 			side="East";
@@ -539,80 +510,7 @@ class Mission
 			};
 			id=13;
 		};
-		class Item8
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={23713.91,5.2314463,16192.556};
-					};
-					side="East";
-					flags=7;
-					class Attributes
-					{
-						isPlayable=1;
-					};
-					id=16;
-					type="O_helipilot_F";
-					atlOffset=7.6293945e-006;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="Male03PER";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.04;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=15;
-			atlOffset=7.6293945e-006;
-		};
-		class Item9
+		class Item7
 		{
 			dataType="Group";
 			side="Independent";
@@ -685,7 +583,7 @@ class Mission
 			id=17;
 			atlOffset=7.6293945e-006;
 		};
-		class Item10
+		class Item8
 		{
 			dataType="Group";
 			side="Independent";
@@ -756,7 +654,7 @@ class Mission
 			};
 			id=19;
 		};
-		class Item11
+		class Item9
 		{
 			dataType="Group";
 			side="Independent";
@@ -827,78 +725,7 @@ class Mission
 			};
 			id=21;
 		};
-		class Item12
-		{
-			dataType="Group";
-			side="Independent";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={23715.371,5.2314386,16205.932};
-					};
-					side="Independent";
-					flags=7;
-					class Attributes
-					{
-						isPlayable=1;
-					};
-					id=24;
-					type="I_helipilot_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="Male01GRE";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.01;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=23;
-		};
-		class Item13
+		class Item10
 		{
 			dataType="Group";
 			side="Civilian";

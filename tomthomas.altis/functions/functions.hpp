@@ -27,5 +27,6 @@ class GPF
 	class rescueEvac {};
 	class makeCZ {};
 	class endgame {};
+	class SpawnVehicle {};
   };
 };

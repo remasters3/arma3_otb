@@ -7,9 +7,4 @@
 // deletevehicle _acc;
 //["helloWorld",player,0] remoteExecCall ["GPF_fnc_playerMSG",0, false];
 
-[]Spawn{
-	while {true} do {
-	hint format ["|B:%1|R:%2|G:%3|",scoreSide west,scoreSide east,scoreSide resistance];
-	sleep 1;
-	};
-};
+

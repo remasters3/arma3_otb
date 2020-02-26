@@ -22,13 +22,13 @@ class GPF_rscButton0: RscButton
 {
 	idc = 1600;
 	text = "Repair Vehicle"; //--- ToDo: Localize;
-	x = 0.391719 * safezoneW + safezoneX;
-	y = 0.566 * safezoneH + safezoneY;
-	w = 0.0928125 * safezoneW;
+	x = 0.489687 * safezoneW + safezoneX; //x = 0.391719 * safezoneW + safezoneX;
+	y = 0.632 * safezoneH + safezoneY; //y = 0.566 * safezoneH + safezoneY;
+	w = 0.0928125 * safezoneW;	
 	h = 0.022 * safezoneH;
-	action = "_items = items player; if ('ToolKit' in _items) then { _veh = vehicle player; if (player != _veh) Then {_veh setDammage 0};} Else {systemChat 'Needs Toolkit'};closeDialog 0";
+	action = "_items = items player; if ('ToolKit' in _items) then { _veh = vehicle player; if (player != _veh) Then {_veh setDammage 0;_veh SetFuel 1;};} Else {systemChat 'Needs Toolkit'};closeDialog 0";
 };
-class GPF_rscButton1: RscButton
+/*class GPF_rscButton1: RscButton
 {
 	idc = 1601;
 	text = "Ground Support"; //--- ToDo: Localize;
@@ -37,16 +37,21 @@ class GPF_rscButton1: RscButton
 	w = 0.0928125 * safezoneW;
 	h = 0.022 * safezoneH;
 	action = "closeDialog 0;[player] execVM 'troops.sqf';";
-};
+};*/
 class GPF_rscButton2: RscButton
 {
 	idc = 1602;
-	text = "Spawn Helo"; //--- ToDo: Localize;
-	x = 0.489687 * safezoneW + safezoneX;
+	text = "Gear"; //--- ToDo: Localize;
+	/*x = 0.489687 * safezoneW + safezoneX;
 	y = 0.566 * safezoneH + safezoneY;
 	w = 0.0928125 * safezoneW;
+	h = 0.022 * safezoneH;*/
+	x = 0.489687 * safezoneW + safezoneX;
+	y = 0.599 * safezoneH + safezoneY;
+	w = 0.0928125 * safezoneW;
 	h = 0.022 * safezoneH;
-	action = "if (playerHeli) Then { deleteVehicle hveh; hveh = [(GetPos player)] Call gpf_SpawnAirTransport; playerHeli = true;} Else {hveh = [(GetPos player)] Call gpf_SpawnAirTransport; playerHeli = true;};closeDialog 0";
+	action = "['Open',true] spawn BIS_fnc_arsenal;closeDialog 0";
+	//action = "if (playerHeli) Then { deleteVehicle hveh; hveh = [(GetPos player)] Call gpf_SpawnAirTransport; playerHeli = true;} Else {hveh = [(GetPos player)] Call gpf_SpawnAirTransport; playerHeli = true;};closeDialog 0";
 	//action = "if (playerHeli) Then { deleteVehicle hveh; hveh = createVehicle ['C_Heli_Light_01_civil_F', position player, [], 0, 'FORM']; playerHeli = true;} Else {hveh = createVehicle ['C_Heli_Light_01_civil_F', position player, [], 0, 'FORM']; playerHeli= true;};closeDialog 0;";
 	//action = "closeDialog 0;[player]execVM'garage.sqf';";
 	
@@ -55,15 +60,19 @@ class GPF_rscButton3: RscButton
 {
 	idc = 1603;
 	text = "Spawn ATV"; //--- ToDo: Localize;
-	x = 0.391719 * safezoneW + safezoneX;
+	/*x = 0.391719 * safezoneW + safezoneX;
 	y = 0.533 * safezoneH + safezoneY;
+	w = 0.0928125 * safezoneW;
+	h = 0.022 * safezoneH;*/
+	x = 0.391719 * safezoneW + safezoneX;
+	y = 0.599 * safezoneH + safezoneY;
 	w = 0.0928125 * safezoneW;
 	h = 0.022 * safezoneH;
 	action = "if (playerQuad) Then { deleteVehicle pveh; pveh = [(GetPos player)] Call gpf_SpawnLandTransport; playerQuad = true;} Else {pveh = [(GetPos player)] Call gpf_SpawnLandTransport; playerQuad = true;};closeDialog 0";
 	// action = "if (playerQuad) Then { deleteVehicle pveh; pveh = createVehicle ['B_G_Quadbike_01_F', position player, [], 0, 'FORM']; playerQuad = true;} Else {pveh = createVehicle ['B_G_Quadbike_01_F', position player, [], 0, 'FORM']; playerQuad = true;};closeDialog 0";
 	// needs "playerQuad = false;" set in "InitPlayerLocal.sqf" file
 };
-class GPF_RSCButton4: RscButton
+/*class GPF_RSCButton4: RscButton
 {
 	idc = 1604;
 	text = "Clear Troops"; //--- ToDo: Localize;
@@ -72,16 +81,16 @@ class GPF_RSCButton4: RscButton
 	w = 0.0928125 * safezoneW;
 	h = 0.022 * safezoneH;
 	action = "{ deleteVehicle _x } forEach units group player;closeDialog 0";
-};
+};*/
 class GPF_RSCButton5: RscButton
 {
 	idc = 1605;
-	text = "Gear"; //--- ToDo: Localize;
-	x = 0.489687 * safezoneW + safezoneX;
-	y = 0.533 * safezoneH + safezoneY;
+	text = "";//text = "Gear"; //--- ToDo: Localize;
+	x = 0.44 * safezoneW + safezoneX; //x = 0.489687 * safezoneW + safezoneX;
+	y = 0.566 * safezoneH + safezoneY;//y = 0.533 * safezoneH + safezoneY;
 	w = 0.0928125 * safezoneW;
 	h = 0.022 * safezoneH;
-	action = "['Open',true] spawn BIS_fnc_arsenal;closeDialog 0";
+	action = "closeDialog 0";
 };
 class GPF_RSCButton6: RscButton
 {
@@ -106,7 +115,7 @@ class GPF_RSCButton7: RscButton
 class GPF_RSCButton8: RscButton
 {
 	idc = 1608;
-	text = "Toggle Friendly"; //--- ToDo: Localize;
+	text = "Toggle HUD Markers"; //--- ToDo: Localize;
 	x = 0.391719 * safezoneW + safezoneX;
 	y = 0.665 * safezoneH + safezoneY;
 	w = 0.0928125 * safezoneW;
@@ -126,14 +135,18 @@ class GPF_RSCButton9: RscButton
 class GPF_RSCButton11: RscButton
 {
 	idc = 1610;
-	text = "VIP Menu"; //--- ToDo: Localize;
-	x = 0.489687 * safezoneW + safezoneX;
+	text = ""; //--- ToDo: Localize;
+	x = 0.44 * safezoneW + safezoneX;
 	y = 0.698 * safezoneH + safezoneY;
 	w = 0.0928125 * safezoneW;
 	h = 0.022 * safezoneH;
+	/*x = 0.489687 * safezoneW + safezoneX;
+	y = 0.698 * safezoneH + safezoneY;
+	w = 0.0928125 * safezoneW;
+	h = 0.022 * safezoneH;*/
 	action = "closeDialog 0;[player]execVM 'benifits.sqf';";
 };
-class GPF_RSCButton10: RscButton
+/*class GPF_RSCButton10: RscButton
 {
 	idc = 1611;
 	text = "Placeholder_3"; //--- ToDo: Localize;
@@ -162,7 +175,7 @@ class GPF_RSCButton12: RscButton
 	w = 0.0928125 * safezoneW;
 	h = 0.022 * safezoneH;
 	action = "closeDialog 0";
-};
+};*/
 ////////////////////////////////////////////////////////
 // GUI EDITOR OUTPUT END
 ////////////////////////////////////////////////////////
@@ -245,12 +258,12 @@ class GPF_RSCButton400: RscButton
 class GPF_RSCButton500: RscButton
 {
 	idc = 1605;
-	text = "Admin Tower"; //--- ToDo: Localize;
+	text = "home"; //--- ToDo: Localize;
 	x = 0.489687 * safezoneW + safezoneX;
 	y = 0.533 * safezoneH + safezoneY;
 	w = 0.0928125 * safezoneW;
 	h = 0.022 * safezoneH;
-	action = "closeDialog 0;player setpos [13602.2,12196.8,0];";
+	action = "closeDialog 0;player setpos GetMarkerPos 'respawn_civilian';";
 };
 class GPF_RSCButton600: RscButton
 {
@@ -275,7 +288,7 @@ class GPF_RSCButton700: RscButton
 class GPF_RSCButton800: RscButton
 {
 	idc = 1608;
-	text = "Toggle Friendly"; //--- ToDo: Localize;
+	text = "Toggle HUD Icons"; //--- ToDo: Localize;
 	x = 0.391719 * safezoneW + safezoneX;
 	y = 0.665 * safezoneH + safezoneY;
 	w = 0.0928125 * safezoneW;
@@ -305,12 +318,13 @@ class GPF_RSCButton1100: RscButton
 class GPF_RSCButton1000: RscButton
 {
 	idc = 1611;
-	text = "Placeholder_3"; //--- ToDo: Localize;
+	text = "spawn heli"; //--- ToDo: Localize;
 	x = 0.391719 * safezoneW + safezoneX;
 	y = 0.698 * safezoneH + safezoneY;
 	w = 0.0928125 * safezoneW;
 	h = 0.022 * safezoneH;
-	action = "closeDialog 0";
+	action = "if (playerHeli) Then { deleteVehicle hveh; hveh = [(GetPos player)] Call gpf_SpawnAirTransport; playerHeli = true;} Else {hveh = [(GetPos player)] Call gpf_SpawnAirTransport; playerHeli = true;};closeDialog 0";
+	//action = "closeDialog 0";
 };
 class GPF_RSCButton1300: RscButton
 {
