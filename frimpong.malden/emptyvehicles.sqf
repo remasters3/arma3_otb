@@ -7,7 +7,7 @@ private _params = [
 
 _CivLightVeh = ["I_Heli_light_03_dynamicLoadout_F"];
 				 	 
-_Timeout = 10;
+_Timeout = 60;
 //_txt = FORMAT ["%1",_SidePos];
 //hint _txt;
 			 
