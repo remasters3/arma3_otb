@@ -38,6 +38,7 @@ if (!isDedicated) then {
 [] Spawn { 
     while {true} Do {
 	_cnt = 0;
+	_enemys = [];
 	{
 		if ((side _x) == East) Then {
 			_enemys = _enemys+[_x];
