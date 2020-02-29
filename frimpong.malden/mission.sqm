@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=162;
+		nextID=197;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7963.3257,76.609604,10060.67};
-		dir[]={0.88538396,-0.19727637,0.42118841};
-		up[]={0.1781902,0.98033041,0.084766731};
-		aside[]={0.42963681,2.5855843e-007,-0.90314591};
+		pos[]={1056.8574,5.5189466,675.85303};
+		dir[]={0.18591823,-0.26711729,-0.94558734};
+		up[]={0.051535033,0.96366161,-0.26210994};
+		aside[]={-0.98124158,6.2662002e-007,-0.19292751};
 	};
 };
 binarizationWanted=0;
@@ -92,7 +92,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=15;
+		items=9;
 		class Item0
 		{
 			dataType="Group";
@@ -108,17 +108,36 @@ class Mission
 						position[]={1057.472,3.8251822,670.10498};
 					};
 					side="Civilian";
-					flags=7;
+					flags=6;
 					class Attributes
 					{
 						name="debug_player";
 					};
-					id=3;
-					type="C_Man_ConstructionWorker_01_Red_F";
+					id=196;
+					type="C_Man_ConstructionWorker_01_Black_F";
 					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02GRE";
+								};
+							};
+						};
+						class Attribute1
 						{
 							property="pitch";
 							expression="_this setpitch _value;";
@@ -137,7 +156,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						nAttributes=2;
 					};
 				};
 			};
@@ -153,6 +172,7 @@ class Mission
 			position[]={6660.5459,90.803001,10581.203};
 			name="WPMarker_00";
 			type="mil_destroy";
+			alpha=0;
 			id=71;
 			atlOffset=0.00049591064;
 		};
@@ -709,57 +729,6 @@ class Mission
 				};
 				nAttributes=4;
 			};
-		};
-		class Item9
-		{
-			dataType="Marker";
-			position[]={6706.8281,76.381332,10890.646};
-			name="WPMarker_01";
-			type="mil_destroy";
-			id=150;
-			atlOffset=0.00049591064;
-		};
-		class Item10
-		{
-			dataType="Marker";
-			position[]={7494.5732,28.860001,10620.242};
-			name="WPMarker_02";
-			type="mil_destroy";
-			id=151;
-		};
-		class Item11
-		{
-			dataType="Marker";
-			position[]={7875.3999,36.356575,9327.2803};
-			name="WPMarker_03";
-			type="mil_destroy";
-			id=152;
-			atlOffset=0.00049591064;
-		};
-		class Item12
-		{
-			dataType="Marker";
-			position[]={8159.5747,30.232826,9473.2764};
-			name="WPMarker_04";
-			type="mil_destroy";
-			id=153;
-		};
-		class Item13
-		{
-			dataType="Marker";
-			position[]={8158.8413,29.370001,9645.9043};
-			name="WPMarker_05";
-			type="mil_destroy";
-			id=154;
-		};
-		class Item14
-		{
-			dataType="Marker";
-			position[]={8011.9712,30.615595,9644.377};
-			name="WPMarker_06";
-			type="mil_destroy";
-			id=155;
-			atlOffset=0.00049591064;
 		};
 	};
 };
