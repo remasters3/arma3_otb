@@ -1,3 +1,20 @@
+_md = "O_MRAP_02_gmg_F";
+_Allvehparams = [];
+//
+{	
+	_tvehparams = [];
+	_pos = GetPos _x;
+	_dir = GetDir _x;
+	_model = typeOf _x;
+	if (_model == "O_Truck_02_transport_F") Then {
+	 _tvehparams = [[(_pos Select 0),(_pos Select 1),0],_dir];
+	 _Allvehparams = _Allvehparams + [_tvehparams];
+	};
+} foreach vehicles;
+
+copyToClipboard format ["%1",_Allvehparams];
+
+/*
 _FilterParams=[
 ["O_","_MBT_","_cannon_"],
 ["O_","_APC_","_Tracked_"],
@@ -23,14 +40,12 @@ private _VehClss = [];
 private _wepClss = [];
 private _cb = [];
 {
-	if (_SideTag in _x) Then { 
-		//systemchat Format ["%1",_x];
+	if (_SideTag in _x) Then {
 		_SideClss = _SideClss + [_x];
 	};
 } foreach _AllClss;
 {
 	if (_VehTag in _x) Then { 
-		//systemchat Format ["%1",_x];
 		_VehClss = _VehClss + [_x];
 	};
 } foreach _SideClss;
@@ -53,7 +68,7 @@ _output = format ["%1",SelectRandom _cb];
 copyToClipboard _output;
 systemchat _output;
 
-
+*/
 
 
 /*
