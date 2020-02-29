@@ -1,6 +1,6 @@
 _centerWorld =  _this Select 0;
 private _timeout = 600;
-private _maxunits = (count AllPlayers)*4;
+private _maxunits = (count AllPlayers)*10;
 private _allPlaces = nearestLocations [_centerWorld, ["NameVillage","NameCity","Mount","NameCityCapital","NameLocal"],20000];
 _places = [];
 {_nl = locationPosition _x;_places = _places + [_nl];} Foreach _allPlaces;
@@ -109,8 +109,64 @@ _enemys = [];
 _cnt = {alive _x} count _enemys;
 _thunderNaNaNaNANaNaNaNA = _EastLightVeh+_EastHelo+_EastLightVeh+_EastLightVeh+_EastLightVeh+_EastLightVeh+_EastLightVeh+_EastLightVeh;
 
+_FilterParams=[
+["O_","_MBT_","_cannon_"],
+["O_","_APC_","_Tracked_"],
+["O_","_APC_","_Wheeled_"],
+["O_","_LSV_","_AT_"],
+["O_","_LSV_","_armed_"],
+["O_","_MRAP_","_hmg_"],
+["O_","_MRAP_","_gmg_"],
+["O_","_Heli_","_dynamicLoadout_"]
+];
+
+private _AllClss = (configfile >> "CfgVehicles") call BIS_fnc_getCfgSubClasses;
+private _filters = SelectRandom _FilterParams;
+private _SideTag = _filters Select 0;
+private _VehTag = _filters Select 1;
+private _WepTag = _filters Select 2;
+private _startPos = GetPos player;
+private _start_dir = GetDir player;
+private _inc = 20;
+private _dist = 20;
+private _SideClss = [];
+private _VehClss = [];
+private _wepClss = [];
+private _cb = [];
+{
+	if (_SideTag in _x) Then { 
+		//systemchat Format ["%1",_x];
+		_SideClss = _SideClss + [_x];
+	};
+} foreach _AllClss;
+{
+	if (_VehTag in _x) Then { 
+		//systemchat Format ["%1",_x];
+		_VehClss = _VehClss + [_x];
+	};
+} foreach _SideClss;
+
+{
+	if (_WepTag in _x) Then { 
+		_wepClss = _wepClss + [_x];
+	};
+} foreach _VehClss;
+
+{
+	if (_VehTag in _x) Then { 
+		
+		_cb = _cb + [_x];
+	};
+} foreach _wepClss;
+
+//_output = format ["%1",SelectRandom _cb];
+//
+//copyToClipboard _output;
+//systemchat _output;
+
+
 if (_cnt < _maxunits) Then {
-private _result = [[5935.45,10738.5,0], 90, (SelectRandom _thunderNaNaNaNANaNaNaNA), east] call BIS_fnc_spawnVehicle;
+private _result = [[5935.45,10738.5,0], 90, (SelectRandom _cb), east] call BIS_fnc_spawnVehicle;
 _result params ["_veh", "_crew", "_group"];
 _unit = leader _group;
 _posistions=[];

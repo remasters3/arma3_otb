@@ -10,7 +10,7 @@ private _params = _this;
 _list = _pos nearEntities [["Air", "Car", "Motorcycle", "Tank"], _rad];
 //systemchat format ["--%1--",_list];
 if ((count _list) == 0) Then {
-		{if ((_pos distance _x) <= _rad) Then {deleteVehicle _x;};}forEach allDead;
+		{if ((_pos distance _x) <= _rad+_rad) Then {deleteVehicle _x;};}forEach allDead;
 		_veh = createVehicle [_model, _tpos, [], 0, 'FORM'];
 		if ((count _params) == 5) Then {_veh setObjectTextureGlobal [0,_txtr];};
 		_veh SetDir _dir;
