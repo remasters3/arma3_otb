@@ -37,8 +37,15 @@ if (!isDedicated) then {
 
 [] Spawn { 
     while {true} Do {
+	_cnt = 0;
+	{
+		if ((side _x) == East) Then {
+			_enemys = _enemys+[_x];
+			};
+	} foreach Allunits;
+	_cnt = {alive _x} count _enemys;
 	 player enableFatigue false;
-	 systemChat Format ["%1 units active",Count AllUnits]; 
+	 systemChat Format ["%1 enemy units active",_cnt];
      Sleep 30;
 	 systemChat Format ["Be sure to bind custom action 20"];
 	 Sleep 30;
