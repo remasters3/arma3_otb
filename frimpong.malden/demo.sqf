@@ -62,6 +62,7 @@ _result params ["_veh", "_crew", "_group"];
 _unit = leader _group;
 _posistions=[];
 _nbr = selectRandom [0,1];
+_veh addEventHandler ["GetOut", "_veh = _this select 0;_veh SetDamage 1;"];
 _veh SetDir (_spawner select 1);
 _veh SetPos (_spawner select 0);
 _veh SetDamage 0;
