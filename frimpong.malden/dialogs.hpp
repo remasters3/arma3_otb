@@ -31,7 +31,7 @@ class GPF_rscButton0: RscButton
 class GPF_rscButton1: RscButton
 {
 	idc = 1601;
-	text = "Ground Support"; //--- ToDo: Localize;
+	text = "Deploy Support Troops"; //--- ToDo: Localize;
 	x = 0.391719 * safezoneW + safezoneX;
 	y = 0.599 * safezoneH + safezoneY;
 	w = 0.0928125 * safezoneW;
@@ -67,7 +67,7 @@ class GPF_rscButton3: RscButton
 class GPF_RSCButton4: RscButton
 {
 	idc = 1604;
-	text = "Clear Troops"; //--- ToDo: Localize;
+	text = "Clear Support Troops"; //--- ToDo: Localize;
 	x = 0.489687 * safezoneW + safezoneX;
 	y = 0.599 * safezoneH + safezoneY;
 	w = 0.0928125 * safezoneW;
@@ -336,6 +336,176 @@ class GPF_RSCButton1200: RscButton
 };
 ////////////////////////////////////////////////////////
 // GUI EDITOR OUTPUT TEST END
+////////////////////////////////////////////////////////
+  };
+};
+
+class GPF_Crate_Dialog
+{
+  idd = 9997;
+  movingEnabled = false;
+  
+  class controls
+  {
+////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT START (by Remasters, v1.063, #Goripu)
+////////////////////////////////////////////////////////
+
+class GPF_rscPicture: RscPicture
+{
+	idc = 1200;
+	text = "#(argb,8,8,3)color(0.5,0.5,0.5,0.5)";
+	x = 0.386562 * safezoneW + safezoneX;
+	y = 0.522 * safezoneH + safezoneY;
+	w = 0.201094 * safezoneW;
+	h = 0.242 * safezoneH;
+};
+/*class GPF_rscButton0: RscButton
+{
+	idc = 1600;
+	text = "Repair Vehicle"; //--- ToDo: Localize;
+	x = 0.391719 * safezoneW + safezoneX;
+	y = 0.566 * safezoneH + safezoneY;
+	w = 0.0928125 * safezoneW;	
+	h = 0.022 * safezoneH;
+	action = "_items = items player; if ('ToolKit' in _items) then { _veh = vehicle player; if (player != _veh) Then {_veh setDammage 0;_veh SetFuel 1;};} Else {systemChat 'Needs Toolkit'};closeDialog 0";
+};*/
+class GPF_rscButton1: RscButton
+{
+	idc = 1601;
+	text = "Ground Support"; //--- ToDo: Localize;
+	x = 0.391719 * safezoneW + safezoneX;
+	y = 0.599 * safezoneH + safezoneY;
+	w = 0.0928125 * safezoneW;
+	h = 0.022 * safezoneH;
+	action = "closeDialog 0;[player] execVM 'troops.sqf';";
+};
+class GPF_rscButton2: RscButton
+{
+	idc = 1602;
+	text = "Gear"; //--- ToDo: Localize;
+	x = 0.489687 * safezoneW + safezoneX;
+	y = 0.566 * safezoneH + safezoneY;
+	w = 0.0928125 * safezoneW;
+	h = 0.022 * safezoneH;
+	action = "['Open',true] spawn BIS_fnc_arsenal;closeDialog 0";
+};
+class GPF_rscButton3: RscButton
+{
+	idc = 1603;
+	text = "Spawn ATV"; //--- ToDo: Localize;
+	x = 0.391719 * safezoneW + safezoneX;
+	y = 0.566 * safezoneH + safezoneY;//y = 0.533 * safezoneH + safezoneY;
+	w = 0.0928125 * safezoneW;
+	h = 0.022 * safezoneH;
+	action = "private _quad = [(GetMarkerPos 'marker_b_helipad'),0,'B_Quadbike_01_F',10] call GPF_fnc_SpawnVehicle;if (!isNull _quad) then {systemChat format ['%1',_this];player moveindriver _quad;_quad addEventHandler ['GetOut', '_veh = _this select 0;if (count crew _veh <= 0) Then {deleteVehicle _veh;};playerHeli = false;'];};closeDialog 0";
+	// action = "if (playerQuad) Then { deleteVehicle pveh; pveh = createVehicle ['B_G_Quadbike_01_F', position player, [], 0, 'FORM']; playerQuad = true;} Else {pveh = createVehicle ['B_G_Quadbike_01_F', position player, [], 0, 'FORM']; playerQuad = true;};closeDialog 0";
+	// needs "playerQuad = false;" set in "InitPlayerLocal.sqf" file
+};
+class GPF_RSCButton4: RscButton
+{
+	idc = 1604;
+	text = "Clear Support Troops"; //--- ToDo: Localize;
+	x = 0.489687 * safezoneW + safezoneX;
+	y = 0.599 * safezoneH + safezoneY;
+	w = 0.0928125 * safezoneW;
+	h = 0.022 * safezoneH;
+	action = "{ deleteVehicle _x } forEach units group player;closeDialog 0";
+};
+class GPF_RSCButton5: RscButton
+{
+	idc = 1605;
+	text = "";//text = "Gear"; //--- ToDo: Localize;
+	x = 0.44 * safezoneW + safezoneX; //x = 0.489687 * safezoneW + safezoneX;
+	y = 0.533 * safezoneH + safezoneY; //y = 0.566 * safezoneH + safezoneY;//y = 0.533 * safezoneH + safezoneY;
+	w = 0.0928001* safezoneW;
+	h = 0.022 * safezoneH;
+	action = "closeDialog 0";
+};
+/*class GPF_RSCButton6: RscButton
+{
+	idc = 1606;
+	text = "Ear Plugs"; //--- ToDo: Localize;
+	x = 0.391719 * safezoneW + safezoneX;
+	y = 0.632 * safezoneH + safezoneY;
+	w = 0.0928125 * safezoneW;
+	h = 0.022 * safezoneH;
+	action = "[player] Call GPF_fnc_earPlugs;closeDialog 0";
+};
+class GPF_RSCButton7: RscButton
+{
+	idc = 1607;
+	text = "Air Evac"; //--- ToDo: Localize;
+	x = 0.489687 * safezoneW + safezoneX;
+	y = 0.632 * safezoneH + safezoneY;
+	w = 0.0928125 * safezoneW;
+	h = 0.022 * safezoneH;
+	action = "closeDialog 0; [player] execVM 'evac.sqf';";
+};
+class GPF_RSCButton8: RscButton
+{
+	idc = 1608;
+	text = "Toggle HUD Markers"; //--- ToDo: Localize;
+	x = 0.391719 * safezoneW + safezoneX;
+	y = 0.665 * safezoneH + safezoneY;
+	w = 0.0928125 * safezoneW;
+	h = 0.022 * safezoneH;
+	action = "closeDialog 0;if (ShowFriendly) Then {ShowFriendly = false;} Else {ShowFriendly= true;};";
+};
+class GPF_RSCButton9: RscButton
+{
+	idc = 1609;
+	text = "Groups Menu"; //--- ToDo: Localize;
+	x = 0.489687 * safezoneW + safezoneX;
+	y = 0.665 * safezoneH + safezoneY;
+	w = 0.0928125 * safezoneW;
+	h = 0.022 * safezoneH;
+	action = "closeDialog 0;findDisplay 46 createDisplay 'RscDisplayDynamicGroups';";
+};
+
+class GPF_RSCButton11: RscButton
+{
+	idc = 1610;
+	text = ""; //--- ToDo: Localize;
+	x = 0.489687 * safezoneW + safezoneX;
+	y = 0.698 * safezoneH + safezoneY;
+	w = 0.0928125 * safezoneW;
+	h = 0.022 * safezoneH;
+	action = "closeDialog 0;[player]execVM 'benifits.sqf';";
+};
+class GPF_RSCButton10: RscButton
+{
+	idc = 1611;
+	text = "Placeholder_3"; //--- ToDo: Localize;
+	x = 0.391719 * safezoneW + safezoneX;
+	y = 0.698 * safezoneH + safezoneY;
+	w = 0.0928125 * safezoneW;
+	h = 0.022 * safezoneH;
+	action = "closeDialog 0";
+};
+class GPF_RSCButton13: RscButton
+{
+	idc = 1612;
+	text = "Placeholder_4"; //--- ToDo: Localize;
+	x = 0.489687 * safezoneW + safezoneX;
+	y = 0.731 * safezoneH + safezoneY;
+	w = 0.0928125 * safezoneW;
+	h = 0.022 * safezoneH;
+	action = "closeDialog 0";
+};
+class GPF_RSCButton12: RscButton
+
+{
+	idc = 1613;
+	text = "Placeholder_5"; //--- ToDo: Localize;
+	x = 0.391719 * safezoneW + safezoneX;
+	y = 0.731 * safezoneH + safezoneY;
+	w = 0.0928125 * safezoneW;
+	h = 0.022 * safezoneH;
+	action = "closeDialog 0";
+};*/
+////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT END
 ////////////////////////////////////////////////////////
   };
 };

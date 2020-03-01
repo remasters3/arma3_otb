@@ -18,9 +18,9 @@ _debug = false;
 if (_debug) then {
    //debug_player setPos _centerWorld;
    debug_player AddAction ["Kill", "_veh = cursorTarget; _veh SetDamage 1;"];
+   debug_player AddAction ["Tagert2Clip", "systemchat str(typeOf cursortarget); copyToClipboard str(typeOf cursortarget);"];
    debug_player AddAction ["Heal","_this Select 0 SetDamage 0"];    
    debug_player addAction ["debug.sqf", "execVM 'debug.sqf';"];
-   debug_player AddAction ["loopoff", "gameon = false;"];
    debug_player AddAction ["CivRespawnMarker","vehicle player SetPos [559.729,1423.49,81.3931];"];    /*(getMarkerPos 'respawn_civilian');*/
    debug_player AddAction ["VKill","{_x SetDamage 1;} Foreach vehicles;{deleteVehicle _x;} forEach allDeadMen;{deleteVehicle _x;} forEach allDead;"];   
    debug_player AddAction ["EKill","{if (side _x == EAST) then { _x SetDamage 1;};} Foreach AllUnits;"];

@@ -7,7 +7,6 @@ _isJIP = _this select 1;
 
 playerQuad = false;
 playerHeli = false;
-
 gpf_SpawnLandTransport = {
 	_pos = _this Select 0;
 	_quad = createVehicle ['B_Quadbike_01_F', _pos, [], 0, 'FORM'];
@@ -45,11 +44,11 @@ if (!isDedicated) then {
 			};
 	} foreach Allunits;
 	_cnt = {alive _x} count _enemys;
-	 player enableFatigue false;
-	 systemChat Format ["%1 enemy units active",_cnt];
-     Sleep 30;
-	 systemChat Format ["Be sure to bind custom action 20"];
-	 Sleep 30;
+	player enableFatigue false;
+	systemChat Format ["%1 enemy units active",_cnt];
+    Sleep 30;
+	systemChat Format ["Be sure to bind custom action 20"];
+	Sleep 30;
 	};
 };
 

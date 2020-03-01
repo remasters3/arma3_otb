@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=215;
+		nextID=217;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8122.1323,38.837334,10489.859};
-		dir[]={0.83793813,-0.54418939,-0.044407248};
-		up[]={0.54352969,0.83882356,-0.028802291};
-		aside[]={-0.052929647,1.7079656e-006,-0.99875414};
+		pos[]={8136.8125,40.063549,10489.07};
+		dir[]={-0.0069879168,-0.3467443,0.93806249};
+		up[]={-0.0025851666,0.93782228,0.34689584};
+		aside[]={1.0001222,2.2927088e-006,0.0074461084};
 	};
 };
 binarizationWanted=0;
@@ -28,13 +28,14 @@ addons[]=
 	"A3_Characters_F_Orange",
 	"A3_Ui_F",
 	"A3_Characters_F",
-	"A3_Modules_F_Curator_Curator"
+	"A3_Modules_F_Curator_Curator",
+	"A3_Structures_F_EPA_Mil_Scrapyard"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=4;
+		items=5;
 		class Item0
 		{
 			className="A3_Characters_F_Orange";
@@ -60,6 +61,13 @@ class AddonsMetaData
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item4
+		{
+			className="A3_Structures_F_EPA";
+			name="Arma 3 Survive Episode - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -92,7 +100,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=9;
+		items=11;
 		class Item0
 		{
 			dataType="Group";
@@ -729,6 +737,41 @@ class Mission
 				};
 				nAttributes=4;
 			};
+		};
+		class Item9
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8130.4502,30.76918,10503.987};
+				angles[]={6.2783856,0,6.2743888};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this AddAction [""Open Menu"", ""createDialog 'GPF_Crate_Dialog';""];";
+			};
+			id=215;
+			type="Land_PaperBox_open_full_F";
+		};
+		class Item10
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8132.8862,30.752346,10505.68};
+				angles[]={0.0026703537,5.8375506,6.2720499};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this AddAction [""Open Menu"", ""createDialog 'GPF_Crate_Dialog';""];";
+			};
+			id=216;
+			type="Land_PaperBox_open_empty_F";
+			atlOffset=1.9073486e-006;
 		};
 	};
 };
