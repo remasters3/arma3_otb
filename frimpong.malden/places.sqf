@@ -1,14 +1,14 @@
 private _centerWorld =  _this Select 0;
 	_pCount = 0;
 	_SidePos = [
-	[8125.96,10489.1,0], //WEST
+	[8026.28,10465.5,0], // [8125.96,10489.1,0], //WEST
 	[6094.92,10762.5,0], //[11293.5,4653.34,0],//EAST
 	[10514.9,4047.27,0], //[7145.7,12206.4,0], // Resistance
 	[3787.59,4932.45,0]  //[783.857,12276.5,0] //Civ
 ];
 
 	private _locs = [
-	[(_SidePos Select 0),10,[]],
+	[(_SidePos Select 0),20,[]],
 	[(_SidePos Select 1),30,[]],
 	[(_SidePos Select 2),20,[]]
 	];

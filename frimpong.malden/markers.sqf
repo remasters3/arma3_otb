@@ -6,7 +6,8 @@ _civilianpos =_this select 3;
 _markers = [];
 _offset = 10;
 // West Markers
-_WestRespawn = createMarker ["respawn_west",[(_westpos Select 0)-_offset,(_westpos Select 1),0]];_markers = _markers + [_WestRespawn];
+_westspawnpos = [_westpos, 15,270] call BIS_fnc_relPos;
+_WestRespawn = createMarker ["respawn_west",_westspawnpos];_markers = _markers + [_WestRespawn];
 _WestEvacMarker = createMarker ["marker_b_helipad",[(_westpos Select 0),(_westpos Select 1),0]];
 /*_WestEvacMarker setMarkerColor "ColorWEST";
 _WestEvacMarker setMarkerType "mil_flag";*/

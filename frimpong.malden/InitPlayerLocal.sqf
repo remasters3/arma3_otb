@@ -75,5 +75,15 @@ if (!isDedicated) then {
    If (Side _unit == Civilian  ) Then {
    _pos = GetMarkerPos "respawn_civilian"; _unit SetPos _pos;
    };
+   private _cnt = 0;
+   while {(_cnt < 360)} Do {
+   private _pos = [(GetMarkerPos "marker_b_helipad"), 16,_cnt] call BIS_fnc_relPos;
+   private _box = "Land_PaperBox_open_full_F" createVehicleLocal _pos;
+   _box AddAction ["Open Menu", "createDialog 'GPF_Crate_Dialog';"];
+   _box setDir _cnt;
+   _box setPos _pos;
+   _cnt = _cnt+90;
+   };
    [] execVM "playerIcons.sqf";
+   
   };

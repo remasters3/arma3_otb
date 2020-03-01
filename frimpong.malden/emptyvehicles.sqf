@@ -47,6 +47,29 @@ _Timeout = 60;
  Sleep _Timeout;};
 };
 
+waitUntil {(!isNil "MarkersDone")};
+private _cnt = 0;
+while {(_cnt < 360)} do {
+	_pos = [(_SidePos Select 0), 20,_cnt] call BIS_fnc_relPos;
+	_veh = createVehicle ["Land_HBarrierWall6_F", _pos, [], 0, 'FORM'];
+	_veh setdir _cnt;
+	_veh SetPos _pos;
+	_cnt = _cnt+45;
+};
+
+private _cnt = 45;
+while {(_cnt < 360)} do {
+	_pos = [(_SidePos Select 0), 28,_cnt+180] call BIS_fnc_relPos;
+	_tower = [[_pos],west,["B_soldier_AA_F","B_soldier_AT_F"],_cnt,0,"Land_Cargo_Patrol_V1_F"] Call GPF_fnc_GuardTowers;
+	_cnt = _cnt+90;
+};
+
+
+
+
+
+
+
 /*[_Timeout] Spawn {_Timeout = _this select 0;
 
  while {true} Do {

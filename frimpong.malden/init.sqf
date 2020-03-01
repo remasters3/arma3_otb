@@ -38,7 +38,6 @@ if (_debug) then {
 	};*/
    
 } else {deleteVehicle debug_player;};
-////debug_player AddAction ["CenterWorld","_centerWorld = getArray(configFile >> 'CfgWorlds' >> worldName >> 'centerPosition');_scwPos = [(_centerWorld Select 0)+10,(_centerWorld Select 1)+10,0];vehicle player SetPos _scwPos;"]; 
 
 [_centerWorld]execVM "places.sqf";
 
