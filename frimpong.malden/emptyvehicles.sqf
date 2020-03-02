@@ -64,29 +64,16 @@ while {(_cnt < 360)} do {
 	_cnt = _cnt+90;
 };
 
+_AllClss = (configfile >> "CfgVehicles") call BIS_fnc_getCfgSubClasses;
+private _units = [];
+_tag = "B_soldier";
+{
+	if (_tag in _x) Then {
+		_units = _units + [_x];
+	};
+} foreach _AllClss;
 
+_Barraks_00 = [[8140.26,10450.8,0],(GetMarkerPos "respawn_west"),10,30,West,_units,0,0,[],"VR_Area_01_square_1x1_grey_F"] Call GPF_fnc_barraks;
 
-
-
-
-
-/*[_Timeout] Spawn {_Timeout = _this select 0;
-
- while {true} Do {
-	{
-	_veh = _x call GPF_fnc_SpawnVehicle;
-	} forEach [
-		[[14768.3,16631.4,0],0,"B_Heli_Light_01_F",10,"images\cc1.jpg"],
-		[[14715.6,16636.2,0],0,"C_Plane_Civil_01_racing_F",10],
-		[[14747.4,16668,0],0,"C_Plane_Civil_01_F",10],
-		[[14776.2,16694.6,0],0,"C_Plane_Civil_01_F",10],
-		[[14807,16724.6,0],0,"C_Plane_Civil_01_racing_F",10],
-		[[14636.4,16756.8,0],90,"C_Plane_Civil_01_racing_F",10],
-		[[26742.1,24619.3,0],128,"B_Plane_CAS_01_dynamicLoadout_F",10],
-		[[20798.7,7227.86,0],0,"O_Plane_CAS_02_dynamicLoadout_F",10],
-		[[9193.1,21641.7,0],195,"I_Plane_Fighter_03_dynamicLoadout_F",10]
-	];
- Sleep _Timeout;};
-};*/
 
 //{clearWeaponCargoGlobal _x;} forEach _vehs; {clearMagazineCargoGlobal _x;} forEach _vehs;

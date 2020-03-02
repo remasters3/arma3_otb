@@ -1,4 +1,19 @@
-_md = "O_MRAP_02_gmg_F";
+// B_Soldier_A_F
+
+_AllClss = (configfile >> "CfgVehicles") call BIS_fnc_getCfgSubClasses;
+private _SideClss = [];
+_tag = "B_soldier";
+{
+	if (_tag in _x) Then {
+		_SideClss = _SideClss + [_x];
+	};
+} foreach _AllClss;
+_txt = format ["%1",_SideClss];
+copyToClipboard _txt;
+systemchat format ["%1",(count _SideClss)];
+
+
+/*_md = "O_MRAP_02_gmg_F"; 
 _Allvehparams = [];
 //
 {	
@@ -13,7 +28,7 @@ _Allvehparams = [];
 } foreach vehicles;
 
 copyToClipboard format ["%1",_Allvehparams];
-
+*/
 /*
 _FilterParams=[
 ["O_","_MBT_","_cannon_"],
