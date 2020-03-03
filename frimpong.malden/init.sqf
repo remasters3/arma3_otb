@@ -14,7 +14,7 @@ West setFriend [East, 0];
 
 _centerWorld = getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition");
 
-_debug = true;
+_debug = false;
 if (_debug) then {
    //debug_player setPos _centerWorld;
    debug_player AddAction ["Kill", "_veh = cursorTarget; _veh SetDamage 1;"];
