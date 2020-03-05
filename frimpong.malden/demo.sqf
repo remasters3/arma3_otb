@@ -1,5 +1,5 @@
 private _centerWorld =  _this Select 0;
-private _maxunits = (count AllPlayers)*9;
+private _maxunits = (count AllPlayers)*9+10;
 private _spawners = [[[6227.71,10722.2,0],344.766],[[6218.53,10659.2,0],0.00202736],[[6300.59,10650.6,0],0.108305],[[6082.95,10686.9,0],359.92],[[5942.38,10727.2,0],0.00200302],[[5915.95,10727.8,0],0.00201336],[[5768.57,10713.3,0],40.0689],[[5818.26,10802.5,0],51.0389],[[5863.2,10769.9,0],141.029]];
 private _enemys = [];
 private _cnt = 0;
@@ -70,4 +70,20 @@ _veh SetFuel 1;
 _posistions = [_nbr] Call GPF_fnc_MaldenRoute;
 _params = [_unit,_posistions,_nbr];
 _way = _params call GPF_fnc_WPLoop;
+_AllClss = (configfile >> "CfgVehicles") call BIS_fnc_getCfgSubClasses;
+private _units = [];
+private _vehs = [];
+_tag = "O_V_Soldier";
+_vtag = "O_Heli_Light_";
+{
+	if (_tag in _x) Then {
+		_units = _units + [_x];
+	};
+	
+	if (_vtag in _x) Then {
+		_vehs = _vehs + [_x];
+	};
+
+} foreach _AllClss;
+//[(GetMarkerPos "respawn_west"),(selectRandom _vehs),east,[(selectRandom _units),(selectRandom _units),(selectRandom _units),(selectRandom _units),(selectRandom _units)],0,false] Call GPF_fnc_TroopDrop;
 };

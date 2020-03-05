@@ -65,15 +65,21 @@ while {(_cnt < 360)} do {
 };
 
 _AllClss = (configfile >> "CfgVehicles") call BIS_fnc_getCfgSubClasses;
-private _units = [];
-_tag = "B_soldier";
+private _wunits = [];
+private _eunits = [];
+private _wtag = "B_soldier";
+private _etag = "O_Soldier";
 {
-	if (_tag in _x) Then {
-		_units = _units + [_x];
+	if (_wtag in _x) Then {
+		_wunits = _wunits + [_x];
+	};
+	if (_etag in _x) Then {
+		_eunits = _eunits + [_x];
 	};
 } foreach _AllClss;
 
-_Barraks_00 = [[8140.26,10450.8,0],(GetMarkerPos "respawn_west"),10,30,West,_units,0,0,[],"VR_Area_01_square_1x1_grey_F"] Call GPF_fnc_barraks;
+_Barraksw = [[8140.26,10450.8,0],(GetMarkerPos "respawn_east"),10,30,West,_wunits,0,0,[],"VR_Area_01_square_1x1_grey_F"] Call GPF_fnc_barraks;
+_Barrakse = [[6302.5,10704.4,0],(GetMarkerPos "respawn_west"),10,30,East,_eunits,0,0,[],"VR_Area_01_square_1x1_grey_F"] Call GPF_fnc_barraks;
 
 
 //{clearWeaponCargoGlobal _x;} forEach _vehs; {clearMagazineCargoGlobal _x;} forEach _vehs;
