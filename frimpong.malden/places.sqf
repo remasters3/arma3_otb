@@ -10,7 +10,8 @@ private _centerWorld =  _this Select 0;
 	private _locs = [
 	[(_SidePos Select 0),20,[]],
 	[(_SidePos Select 1),30,[]],
-	[(_SidePos Select 2),20,[]]
+	[(_SidePos Select 2),20,[]],
+	[[6291.73,10829.5,0],35,[]]
 	];
 	
 	{
