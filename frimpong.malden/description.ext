@@ -21,6 +21,7 @@ respawnDialog = 1;
 disabledAI = 1;
 briefing = 0;
 debriefing = 0;
+respawnTemplates[] = {"EndMission","Counter","MenuPosition"};
 respawnTemplatesWest[] = {"EndMission","Counter","MenuPosition"};
 respawnTemplatesEast[] = {"EndMission","Counter","MenuPosition"};
 class CfgFunctions

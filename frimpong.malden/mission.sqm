@@ -8,18 +8,18 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=242;
+		nextID=247;
 	};
 	class MarkerIDProvider
 	{
-		nextID=1;
+		nextID=2;
 	};
 	class Camera
 	{
-		pos[]={7097.0767,37.050266,12281.274};
-		dir[]={0.3174262,-0.12758018,-0.93979317};
-		up[]={0.041040111,0.99155241,-0.12151028};
-		aside[]={-0.94762021,-9.6198346e-007,-0.32004908};
+		pos[]={8041.4272,38.318848,10627.806};
+		dir[]={0.19618686,-0.065253071,-0.97852337};
+		up[]={0.012970406,0.99758029,-0.064690053};
+		aside[]={-0.98072058,-1.3775134e-006,-0.19661637};
 	};
 };
 binarizationWanted=0;
@@ -69,6 +69,53 @@ randomSeed=13850359;
 class ScenarioData
 {
 	author="Remasters";
+	disabledAI=1;
+	joinUnassigned=0;
+};
+class CustomAttributes
+{
+	class Category0
+	{
+		name="Multiplayer";
+		class Attribute0
+		{
+			property="ReviveMode";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+				};
+			};
+		};
+		nAttributes=2;
+	};
 };
 class Mission
 {

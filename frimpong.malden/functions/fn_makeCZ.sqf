@@ -13,7 +13,6 @@ private _list = [];
  _marker setMarkerBrush "DIAGGRID";
  _marker setMarkerAlpha 0.7;
 
-
 [_marker,_targetRadias] Spawn {_marker = _this select 0; _targetRadias = _this Select 1; _czp = true;
   while {_czp} do {
     if (getMarkerColor _marker == "") then {_czp = false;} Else {

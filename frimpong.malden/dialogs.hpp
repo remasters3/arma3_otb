@@ -256,12 +256,12 @@ class GPF_RSCButton500: RscButton
 class GPF_RSCButton600: RscButton
 {
 	idc = 1606;
-	text = "Ear Plugs"; //--- ToDo: Localize;
+	text = "Garage"; //--- ToDo: Localize;
 	x = 0.391719 * safezoneW + safezoneX;
 	y = 0.632 * safezoneH + safezoneY;
 	w = 0.0928125 * safezoneW;
 	h = 0.022 * safezoneH;
-	action = "[player] Call GPF_fnc_earPlugs;closeDialog 0";
+	action = "_pos = player getPos [30,getDir player];BIS_fnc_garage_center = createVehicle [ 'Land_HelipadEmpty_F', _pos, [], 0, 'CAN_COLLIDE' ];[ 'Open', true ] call BIS_fnc_garage;closeDialog 0";
 };
 class GPF_RSCButton700: RscButton
 {
