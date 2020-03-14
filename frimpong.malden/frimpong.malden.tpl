@@ -10,4 +10,4 @@ class Missions
 
 
  //an empty whitelist means there is no restriction on what missions' available
-missionWhitelist[] = {"frimpong.malden"};
+missionWhitelist[] = {};
