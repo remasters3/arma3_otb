@@ -8,5 +8,6 @@
 //["helloWorld",player,0] remoteExecCall ["GPF_fnc_playerMSG",0, false];
 _dist = player distance (GetMarkerPos "repawn_west");
 [_dist] call GPF_fnc_iconResize;
+systemchat format ["%1",_dist];
 
 

@@ -27,7 +27,7 @@ if (ShowFriendly) then {
 							private _rescuegroup = group _x;
 							private _size = [_rdst] call GPF_fnc_iconResize;
 							private _cnt = {alive _x} count units _rescuegroup;
-							drawIcon3D [_icon, _iconColour,(getpos _x), _size, _size, 1,format ["%3 | %2 Units | %1m",floor _rdst,_cnt,_rescuegroup], 0, 0.04, "RobotoCondensedLight","center",true];
+							drawIcon3D [_icon, _iconColour,(getpos _x), 0.5, 0.5, 1,format ["%3 | %2 Units | %1m",floor _rdst,_cnt,_rescuegroup], 0, 0.04, "RobotoCondensedLight","center",true];
 						};
 					};
 				};
