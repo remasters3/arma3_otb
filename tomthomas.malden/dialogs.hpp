@@ -115,7 +115,7 @@ class GPF_RSCButton7: RscButton
 class GPF_RSCButton8: RscButton
 {
 	idc = 1608;
-	text = "Toggle HUD Markers"; //--- ToDo: Localize;
+	text = "Toggle Friendly"; //--- ToDo: Localize;
 	x = 0.391719 * safezoneW + safezoneX;
 	y = 0.665 * safezoneH + safezoneY;
 	w = 0.0928125 * safezoneW;
@@ -125,12 +125,12 @@ class GPF_RSCButton8: RscButton
 class GPF_RSCButton9: RscButton
 {
 	idc = 1609;
-	text = "Groups Menu"; //--- ToDo: Localize;
+	text = "Toggle Enemy"; //--- ToDo: Localize;
 	x = 0.489687 * safezoneW + safezoneX;
 	y = 0.665 * safezoneH + safezoneY;
 	w = 0.0928125 * safezoneW;
 	h = 0.022 * safezoneH;
-	action = "closeDialog 0;findDisplay 46 createDisplay 'RscDisplayDynamicGroups';";
+	action = "closeDialog 0;if (ShowTargets) Then {ShowTargets = false;} Else {ShowTargets= true;};";
 };
 class GPF_RSCButton11: RscButton
 {

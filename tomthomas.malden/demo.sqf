@@ -219,5 +219,43 @@ if ((count Allunits) < _maxunits) Then {
 			};	
 		};
 		//systemchat format ["%1",_evac];
-	} Foreach _sideSettings;	
+	} Foreach _sideSettings;
+
+	_side = selectRandom [west,east,resistance];
+	_stag = "C_";
+	if (_side == west) 		 Then {_stag = "B_MRAP";};
+	if (_side == east) 		 Then {_stag = "O_MRAP";};
+	if (_side == resistance) Then {_stag = "I_MRAP";};
+	_AllClss = (configfile >> "CfgVehicles") call BIS_fnc_getCfgSubClasses;
+	private _stags = [];
+	private _vtags = [];
+	private _atags = [];
+	_vtag = "_MRAP_";
+	_atag = "_hmg_";
+	{		
+		if (_stag in _x) Then {
+			_stags = _stags + [_x];
+		};
+	} foreach _AllClss;
+	
+	{		
+		if (_vtag in _x) Then {
+			_vtags = _vtags + [_x];
+		};
+	} foreach _stags;
+	
+	{		
+		if (_vtag in _x) Then {
+			_atags = _atags + [_x];
+		};
+	} foreach _vtags;
+	_nbr = selectRandom [0,1];
+	_posistions = [_nbr] Call GPF_fnc_MaldenRoute;
+	_result = [(selectRandom _posistions),0, (SelectRandom _atags), _side ] call BIS_fnc_spawnVehicle;
+	_result params ["_veh", "_crew", "_group"];
+	_veh addEventHandler ["GetOut", "_veh = _this select 0;if (count crew _veh <= 0) Then {_veh setDamage 1;};"];
+	_params = [(driver _veh),_posistions,_nbr];
+	_way = _params call GPF_fnc_WPLoop;
+	MainTargets = MainTargets+[_veh];publicVariable "MainTargets";
+	systemchat format ["%1",_atags];
 };

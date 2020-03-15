@@ -20,10 +20,12 @@ _towerunits = [];
  sleep 1;
 } Foreach _positions;
 
-[_Timeout,_towers,_towerunits] Spawn { _Timeout = _this Select 0; _towers = _this Select 1; _towerunits  = _this Select 2;
- Sleep _Timeout; 
- {deleteVehicle _x;} Foreach _towers; 
- {deleteVehicle _x;} Foreach _towerunits;
+if (_Timeout > 0) Then {
+	[_Timeout,_towers,_towerunits] Spawn { _Timeout = _this Select 0; _towers = _this Select 1; _towerunits  = _this Select 2;
+	Sleep _Timeout; 
+	{deleteVehicle _x;} Foreach _towers; 
+	{deleteVehicle _x;} Foreach _towerunits;
+	};
 };
 _output = [_towerunits, _towers];
 _output;

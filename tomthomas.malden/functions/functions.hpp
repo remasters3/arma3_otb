@@ -28,5 +28,7 @@ class GPF
 	class makeCZ {};
 	class endgame {};
 	class SpawnVehicle {};
+	class WPLoop {};
+	class MaldenRoute {};
   };
 };

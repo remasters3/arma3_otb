@@ -49,6 +49,8 @@ _pad = createVehicle ["Land_HelipadCivil_F", (GetMarkerPos _x), [], 0, "FORM"];
 // _marker setMarkerAlpha 0.7;
 // _markers = _markers + [_marker];
 //} foreach [0,250];
-
+MainTargets = [];
+publicVariable "MainTargets";
 MarkersDone = True;
 publicVariable "MarkersDone";
+
