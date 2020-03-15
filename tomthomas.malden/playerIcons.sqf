@@ -43,9 +43,9 @@ if (ShowTargets) then {
 			private _rdst = player distance _x;
 			private _icon = "\a3\3den\data\cfg3den\object\iconturret_ca.paa"; //'iconMan';
 			private _cnt = typeOf _x;
-			if ((typeOf _x) != "UNKNOWN") Then {
+			if (alive _x) Then {
 			drawIcon3D [_icon, _iconColour,(getpos _x), 0.3, 0.3, 1,format ["%3 %2 - %1m",floor _rdst,_cnt,side _x], 0, 0.04, "RobotoCondensedLight","center",true];
-			} Else {deleteVehicle _x};
+			};
 		};
 
 	};
