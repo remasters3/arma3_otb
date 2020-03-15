@@ -39,7 +39,7 @@ if (ShowTargets) then {
 		If (Side _x == East      ) Then {_iconColour = [1,0,0,0.5];};
 		If (Side _x == Resistance) Then {_iconColour = [0,1,0,0.5];};
 				
-		if ((vehicle _x) == _x) then {
+		if ((side _x) != civilian) then {
 			private _rdst = player distance _x;
 			private _icon = "\a3\3den\data\cfg3den\object\iconturret_ca.paa"; //'iconMan';
 			private _cnt = typeOf _x;

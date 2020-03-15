@@ -221,7 +221,7 @@ if ((count Allunits) < _maxunits) Then {
 		//systemchat format ["%1",_evac];
 	} Foreach _sideSettings;
 
-	_side = selectRandom [west,east,resistance];
+	_side = selectRandom [west,east,];
 	_stag = "C_";
 	if (_side == west) 		 Then {_stag = "B_MRAP";};
 	if (_side == east) 		 Then {_stag = "O_MRAP";};
@@ -251,7 +251,7 @@ if ((count Allunits) < _maxunits) Then {
 	} foreach _vtags;
 	_nbr = selectRandom [0,1];
 	_posistions = [_nbr] Call GPF_fnc_MaldenRoute;
-	_result = [(selectRandom _posistions),0, (SelectRandom _atags), _side ] call BIS_fnc_spawnVehicle;
+	_result = [(selectRandom _posistions),0, (SelectRandom _atags),_side] call BIS_fnc_spawnVehicle;
 	_result params ["_veh", "_crew", "_group"];
 	_veh addEventHandler ["GetOut", "_veh = _this select 0;if (count crew _veh <= 0) Then {_veh setDamage 1;};"];
 	_params = [(driver _veh),_posistions,_nbr];
