@@ -288,12 +288,13 @@ class GPF_RSCButton700: RscButton
 class GPF_RSCButton800: RscButton
 {
 	idc = 1608;
-	text = "Toggle HUD Icons"; //--- ToDo: Localize;
+	text = "Kill All Units"; //--- ToDo: Localize;
 	x = 0.391719 * safezoneW + safezoneX;
 	y = 0.665 * safezoneH + safezoneY;
 	w = 0.0928125 * safezoneW;
 	h = 0.022 * safezoneH;
-	action = "closeDialog 0;if (ShowFriendly) Then {ShowFriendly = false;} Else {ShowFriendly= true;};";
+	action = "closeDialog 0;{ if (_x != player) then {_x SetDamage 1;};} Foreach AllUnits;";
+	
 };
 class GPF_RSCButton900: RscButton
 {
