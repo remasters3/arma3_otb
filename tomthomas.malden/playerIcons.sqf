@@ -48,7 +48,7 @@ if (ShowTargets) then {
 			private _icon = "\a3\3den\data\cfgwaypoints\destroy_ca.paa";
 			private _cnt = typeOf _x;
 			if (alive _x) Then {
-			drawIcon3D [_icon, _iconColour,(getpos _x), 0.3, 0.3, 1,format ["%3 %2 - %1m",floor _rdst,_cnt,side _x], 0, 0.04, "RobotoCondensedLight","center",true];
+			drawIcon3D [_icon, _iconColour,(getpos _x), 0.5, 0.5, 1,format ["%3 %2 - %1m",floor _rdst,_cnt,side _x], 0, 0.04, "RobotoCondensedLight","center",true];
 			};
 		};
 
