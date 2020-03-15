@@ -11,7 +11,7 @@ If (Side player == Resistance) Then {_iconColour = [0,1,0,0.5];_trgt = GetMarker
 _icon = "\a3\3den\data\cfg3den\history\create_ca.paa";
 
 if (ShowFriendly) then {
-	drawIcon3D [_icon, _iconColour,_trgt, 0.5, 0.5, 1,_txt, 0, 0.04, "RobotoCondensedLight","center",true];
+	drawIcon3D [_icon, [1,1,1,1],_trgt, 0.5, 0.5, 1,_txt, 0, 0.04, "RobotoCondensedLight","center",true];
 	{
 		if ((side player) == (side _x))  Then {
 			if ("evacleader" in allVariables _x) then {
