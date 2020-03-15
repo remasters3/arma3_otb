@@ -39,7 +39,7 @@ _WestLightVeh = ["B_MRAP_01_gmg_F",
 _ResLightVeh = ["I_G_Offroad_01_armed_F",
                  "I_MRAP_03_hmg_F",
                  "I_MRAP_03_gmg_F",
-                 "I_APC_Wheeled_03_cannon_F",
+                 "I_APC_Wheeled_03_cannon_F"
                  ];
 
 _WestHelo = ["B_Heli_Light_01_F"];
@@ -222,7 +222,7 @@ if ((count Allunits) < _maxunits) Then {
 
 	_side = selectRandom [west,east,resistance];
 	_stag = "C_";
-	_model = "";
+	_model = "I_MRAP_03_hmg_F";
 	if (_side == west) 		 Then {_model = selectRandom _WestLightVeh};
 	if (_side == east) 		 Then {_model = selectRandom _EastLightVeh};
 	if (_side == resistance) Then {_model = selectRandom _ResLightVeh};
