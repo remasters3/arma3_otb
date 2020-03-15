@@ -14,7 +14,7 @@ _icon = "a3\3den\data\cfg3den\history\moveitems_ca.paa";
 if (ShowFriendly) then {
 	_dst = player distance _trgt;
 	_txt = format ["%1m",floor _dst];
-	drawIcon3D [_icon, [1,1,1,0.5],_trgt, 0.5, 0.5, 1,_txt, 0, 0.04, "RobotoCondensedLight","center",true];
+	drawIcon3D [_icon, [0.3,0.3,0.5,0.5],_trgt, 0.5, 0.5, 1,_txt, 0, 0.04, "RobotoCondensedLight","center",true];
 	{
 		if ((side player) == (side _x))  Then {
 			if ("evacleader" in allVariables _x) then {
