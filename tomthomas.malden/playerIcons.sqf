@@ -3,7 +3,7 @@ addMissionEventHandler ["Draw3D",{
 _icon = "\A3\EditorPreviews_F_Orange\Data\CfgVehicles\Banner_01_IDAP_F.jpg"; //'iconMan';
 _trgt = GetMarkerPos "respawn_civilian";
 _dst = player distance _trgt;
-_txt = format ["Home - %1m",floor _dst];
+_txt = format ["%1m",floor _dst];
 _iconColour = [1,1,1,0.5];
 If (Side player == West      ) Then {_iconColour = [0,0,1,0.5];_trgt = GetMarkerPos "marker_b_helipad";_dst = player distance _trgt;_txt = format ["Drop Zone - %1m",floor _dst];_icon = "\A3\EditorPreviews_F_Orange\Data\CfgVehicles\Banner_01_NATO_F.jpg";};
 If (Side player == East      ) Then {_iconColour = [1,0,0,0.5];_trgt = GetMarkerPos "marker_r_helipad";_dst = player distance _trgt;_txt = format ["Drop Zone - %1m",floor _dst];_icon = "\A3\EditorPreviews_F_Orange\Data\CfgVehicles\Banner_01_CSAT_F.jpg";};
