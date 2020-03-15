@@ -221,7 +221,7 @@ if ((count Allunits) < _maxunits) Then {
 		//systemchat format ["%1",_evac];
 	} Foreach _sideSettings;
 
-	_side = selectRandom [west,east,];
+	_side = selectRandom [west,east,resistance];
 	_stag = "C_";
 	if (_side == west) 		 Then {_stag = "B_MRAP";};
 	if (_side == east) 		 Then {_stag = "O_MRAP";};
