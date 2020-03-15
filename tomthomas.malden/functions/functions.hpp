@@ -30,5 +30,6 @@ class GPF
 	class SpawnVehicle {};
 	class WPLoop {};
 	class MaldenRoute {};
+	class iconResize {};
   };
 };

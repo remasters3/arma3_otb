@@ -6,5 +6,7 @@
 // SLEEP 5;
 // deletevehicle _acc;
 //["helloWorld",player,0] remoteExecCall ["GPF_fnc_playerMSG",0, false];
+_dist = player distance (GetMarkerPos "repawn_west");
+[_dist] call GPF_fnc_iconResize;
 
 
