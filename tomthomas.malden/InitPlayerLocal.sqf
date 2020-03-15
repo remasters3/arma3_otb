@@ -82,4 +82,5 @@ if (!isDedicated) then {
    _pos = GetMarkerPos "respawn_civilian"; _unit SetPos _pos;
    };
    [] execVM "playerIcons.sqf";
+   [] execVM "rearm.sqf";
   };
