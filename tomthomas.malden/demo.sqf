@@ -40,8 +40,7 @@ _ResLightVeh = ["I_G_Offroad_01_armed_F",
                  "I_MRAP_03_hmg_F",
                  "I_MRAP_03_gmg_F",
                  "I_APC_Wheeled_03_cannon_F",
-                 "B_G_Offroad_01_armed_F",
-                 "B_T_LSV_01_armed_F"];
+                 ];
 
 _WestHelo = ["B_Heli_Light_01_F"];
 _EastHelo = ["O_Heli_Light_02_F"];
@@ -223,9 +222,10 @@ if ((count Allunits) < _maxunits) Then {
 
 	_side = selectRandom [west,east,resistance];
 	_stag = "C_";
-	if (_side == west) 		 Then {_stag = "B_MRAP";};
-	if (_side == east) 		 Then {_stag = "O_MRAP";};
-	if (_side == resistance) Then {_stag = "I_MRAP";};
+	_model = "";
+	if (_side == west) 		 Then {_model = selectRandom _WestLightVeh};
+	if (_side == east) 		 Then {_model = selectRandom _EastLightVeh};
+	if (_side == resistance) Then {_model = selectRandom _ResLightVeh};
 	_AllClss = (configfile >> "CfgVehicles") call BIS_fnc_getCfgSubClasses;
 	private _stags = [];
 	private _vtags = [];
@@ -251,7 +251,7 @@ if ((count Allunits) < _maxunits) Then {
 	} foreach _vtags;
 	_nbr = selectRandom [0,1];
 	_posistions = [_nbr] Call GPF_fnc_MaldenRoute;
-	_result = [(selectRandom _posistions),0, (SelectRandom _atags),_side] call BIS_fnc_spawnVehicle;
+	_result = [(selectRandom _posistions),0, _model,_side] call BIS_fnc_spawnVehicle;
 	_result params ["_veh", "_crew", "_group"];
 	_veh addEventHandler ["GetOut", "_veh = _this select 0;if (count crew _veh <= 0) Then {_veh setDamage 1;};"];
 	_params = [(driver _veh),_posistions,_nbr];
