@@ -256,6 +256,12 @@ if ((count Allunits) < _maxunits) Then {
 	_veh addEventHandler ["GetOut", "_veh = _this select 0;if (count crew _veh <= 0) Then {_veh setDamage 1;};"];
 	_params = [(driver _veh),_posistions,_nbr];
 	_way = _params call GPF_fnc_WPLoop;
-	MainTargets = MainTargets+[_veh];publicVariable "MainTargets";
-	systemchat format ["%1",_atags];
+	MainTargets = MainTargets+[_veh];
+	MainTargets findIf {not alive _x};
+	{
+		_index = MainTargets findIf {not alive _x};
+		if (_index > -1) Then {MainTargets deleteAt _index;};
+		
+	} foreach MainTargets;
+	publicVariable "MainTargets";
 };
