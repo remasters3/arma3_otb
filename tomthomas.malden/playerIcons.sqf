@@ -10,7 +10,7 @@ If (Side player == East      ) Then {_iconColour = [1,0,0,0.5];_trgt = GetMarker
 If (Side player == Resistance) Then {_iconColour = [0,1,0,0.5];_trgt = GetMarkerPos "marker_g_helipad";_dst = player distance _trgt;_txt = format ["Drop Zone - %1m",floor _dst];_icon = "\A3\EditorPreviews_F_Orange\Data\CfgVehicles\Banner_01_AAF_F.jpg"; };
 //_icon = "\a3\3den\data\cfg3den\history\create_ca.paa";
 _txt = format ["%1m",floor _dst];
-_icon = "a3\3den\data\cfg3den\history\moveitems_ca.paa";
+_icon = "\a3\3den\data\cfgwaypoints\destroy_ca.paa";
 
 if (ShowFriendly) then {
 	drawIcon3D [_icon, [1,1,1,1],_trgt, 0.5, 0.5, 1,_txt, 0, 0.04, "RobotoCondensedLight","center",true];
