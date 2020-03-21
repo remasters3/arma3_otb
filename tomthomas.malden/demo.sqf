@@ -1,6 +1,6 @@
 _centerWorld =  _this Select 0;
 private _timeout = 600;
-private _maxunits = 30;
+private _maxunits = 60;
 private _allPlaces = nearestLocations [_centerWorld, ["NameVillage","NameCity","Mount","NameCityCapital","NameLocal"],20000];
 _places = [];
 {_nl = locationPosition _x;_places = _places + [_nl];} Foreach _allPlaces;
