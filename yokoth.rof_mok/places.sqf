@@ -28,7 +28,16 @@ while {_pCount < 360} Do {
  _pCount = _pCount+45;
  _OuterCentrePos = _OuterCentrePos + [_pos];
 };
-
+_OuterCentrePos = [
+	[9886.59,20229.9,0],
+	[9849.59,19575,0],
+	[11893.2,18590,0],
+	[17214.1,20382.8,0],
+	[18202.2,15851.8,0],
+	[20049,12794.2,0],
+	[19893,11064.9,0],
+	[3845.29,12932.1,0]
+];
 _OuterCentreLocations = [];
 _ct = 0;
 {_txt = Format ["L%1",_ct];_nl = ['NameLocal',_x,_txt]; _OuterCentreLocations = _OuterCentreLocations+[_nl];_ct = _ct+1;} Foreach _OuterCentrePos;
@@ -43,6 +52,13 @@ while {_pCount < 360} Do {
  _SidePos = _SidePos + [_pos];
 };
 _SidePos = _SidePos + [_centerWorld];
+_SidePos =  [
+	[4182.36,13719.6,0],
+	[19959.6,13701.8,0],
+	[9733.53,4677.75,0],
+	[11202.9,14976.2,0]
+	
+];
 
 _SideLocations = [];
 _SideLocationNames = ["Blue","Red","Green","Civilian"];
@@ -76,7 +92,7 @@ if (isDedicated or isServer) then { _offset = 0;
 		//[_SidePos] execVM 'mannedvehicles.sqf';
 		_cz = [(_OuterCentrePos select 6),(_OuterCentrePos select 7)];
 		[_OuterCentrePos] execVM 'CZmarkers.sqf';
-		[_OuterCentrePos,20,50] execVM "cover.sqf";
+		//[_OuterCentrePos,20,50] execVM "cover.sqf";
 		
 		_n = count _SideFlagModels;
 		for "_i" from 0 to _n-1 do {

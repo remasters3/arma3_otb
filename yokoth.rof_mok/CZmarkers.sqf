@@ -1,5 +1,5 @@
 private _places = _this select 0;
-private _targetRadias = 100;
+private _targetRadias = 500;
 private _name = "ShitStorm",
 private _cnt = 0;
     
