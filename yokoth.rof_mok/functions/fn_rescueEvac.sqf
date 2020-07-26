@@ -30,9 +30,10 @@ private _walkers = units _rescuegroup;
   _marker setMarkerText _txt;
   _marker setMarkerColor _smc;
     while {_cnt > 0} do {
-    _txt = Format ["[%1] %2 units to rescue",_rescuegroup,_cnt];
+    _txt = Format ["[%1] %2 units",_rescuegroup,_cnt];
 	_marker setMarkerText _txt;
 	_marker SetMarkerPos GetPos _leader;
+	if ((vehicle _leader) == _leader) Then {_marker setMarkerAlpha 0.7;} Else {_marker setMarkerAlpha 0;};
     _civs = [];
     _vehs = [];
     _riders = [];

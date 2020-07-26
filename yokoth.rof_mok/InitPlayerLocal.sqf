@@ -54,13 +54,25 @@ if (!isDedicated) then {
 	}; 
 };
 
-_pos = GetPos _unit;
+
 //BIS_fnc_garage_center = createVehicle [ 'Land_HelipadEmpty_F', _pos, [], 0, 'CAN_COLLIDE' ];
 
 [_unit] Spawn { _unit = _this select 0;
    waitUntil {(!isNil "MarkersDone")};
-   If (Side _unit == West      ) Then {_pos = GetMarkerPos "respawn_west"; _unit SetPos _pos;};
-   If (Side _unit == East      ) Then {_pos = GetMarkerPos "respawn_east"; _unit SetPos _pos;};
-   If (Side _unit == Resistance) Then {_pos = GetMarkerPos "respawn_guerrila"; _unit SetPos _pos;};
-   If (Side _unit == Civilian  ) Then {_pos = GetMarkerPos "respawn_civilian"; _unit SetPos _pos;};
+   private _pos = [];
+   private _ACC = [];
+   If (Side _unit == West      ) Then {_pos = GetMarkerPos "respawn_west"; _unit SetPos _pos;_ACC = carrier_sl_blue;};
+   If (Side _unit == East      ) Then {_pos = GetMarkerPos "respawn_east"; _unit SetPos _pos;_ACC = carrier_sl_red;};
+   If (Side _unit == Resistance) Then {_pos = GetMarkerPos "respawn_guerrila"; _unit SetPos _pos;_ACC = carrier_sl_green;};
+   If (Side _unit == Civilian  ) Then {_pos = GetMarkerPos "respawn_civilian"; _unit SetPos _pos;_ACC = carrier_sl_red;};
+
+   private _cnt = 0;
+   while {(_cnt < 360)} Do {
+   private _pos = [_pos, 6,_cnt] call BIS_fnc_relPos;
+   private _box = "Land_PaperBox_open_full_F" createVehicleLocal _pos;
+   _box addAction ["ACC","[_this select 1] execVM 'goToACC.sqf';"];
+   _box setDir _cnt;
+   _box setPos _pos;
+   _cnt = _cnt+180;
+   };
   };
