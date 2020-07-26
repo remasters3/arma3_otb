@@ -48,14 +48,44 @@ _Timeout = 600;
 	[10,(_Models Select 2),(_SidePos Select 2),200,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;
 	
 	//Blue AirCraft Carrier
-	[(getposASL plane_blue_00),(getDir plane_blue_00),"B_Plane_CAS_01_dynamicLoadout_F",10] call GPF_fnc_SpawnVehicle;
+	{
+		private _ph = _x select 0;
+		private _model = _x select 1;
+		[(getposASL _ph),(getDir _ph),(selectRandom _model),10] call GPF_fnc_SpawnVehicle;
+	} foreach[
+	[plane_blue_00,["B_Plane_CAS_01_dynamicLoadout_F"]],
+	[plane_blue_01,["B_Plane_Fighter_01_Stealth_F"]],
+	[plane_blue_02,["B_Heli_Transport_01_F","B_Heli_Light_01_F"]],
+	[plane_blue_03,["B_Heli_Attack_01_dynamicLoadout_F","B_Heli_Light_01_dynamicLoadout_F"]]
+	];
 	
 	//Red AirCraft Carrier
-	[(getposASL plane_red_00),(getDir plane_red_00),"O_Plane_CAS_02_dynamicLoadout_F",10] call GPF_fnc_SpawnVehicle;
+			{
+		private _ph = _x select 0;
+		private _model = _x select 1;
+		[(getposASL _ph),(getDir _ph),(selectRandom _model),10] call GPF_fnc_SpawnVehicle;
+	} foreach[
+	[plane_red_00,["O_Plane_Fighter_02_Stealth_F"]],
+	[plane_red_01,["O_Plane_CAS_02_dynamicLoadout_F"]],
+	[plane_red_02,["O_Heli_Attack_02_dynamicLoadout_F","O_Heli_Light_02_dynamicLoadout_F"]],
+	[plane_red_03,["O_Heli_Transport_04_bench_F","O_Heli_Transport_04_covered_F"]]
+	];
 	
 	//Green AirCraft Carrier
-	[(getposASL plane_green_00),(getDir plane_green_00),"I_Plane_Fighter_03_dynamicLoadout_F",10] call GPF_fnc_SpawnVehicle;
-	
+		{
+		private _ph = _x select 0;
+		private _model = _x select 1;
+		[(getposASL _ph),(getDir _ph),(selectRandom _model),10] call GPF_fnc_SpawnVehicle;
+	} foreach[
+	[plane_green_00,["I_Plane_Fighter_04_F"]],
+	[plane_green_01,["I_Plane_Fighter_03_dynamicLoadout_F"]],
+	[plane_green_02,["I_Heli_light_03_unarmed_F"]],
+	[plane_green_03,["I_Heli_light_03_dynamicLoadout_F"]]
+	];
+
+
 	//[10,(_Models Select 3),(_SidePos Select 3),100,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;
  Sleep _Timeout;};
 };
+
+

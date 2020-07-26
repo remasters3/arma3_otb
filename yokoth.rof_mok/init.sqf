@@ -19,8 +19,8 @@ _centers = [[10365.2,18682.9,0],
 			[15246.5,12897.1,0],
 			[14648,16272.7,0]
 		   ];
-_centerWorld = SelectRandom _centers; /*_centers select 2;*/
-//_centerWorld = getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition");
+// _centerWorld = SelectRandom _centers; /*_centers select 2;*/
+_centerWorld = getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition");
 
 _debug = false;
 if (_debug) then {
@@ -40,7 +40,7 @@ if (_debug) then {
 } else {deleteVehicle debug_player;};
 // debug_player AddAction ["CenterWorld","_centerWorld = getArray(configFile >> 'CfgWorlds' >> worldName >> 'centerPosition');_scwPos = [(_centerWorld Select 0)+10,(_centerWorld Select 1)+10,0];vehicle player SetPos _scwPos;"]; 
 
-[_centerWorld]execVM "places.sqf";
+[[(_centerWorld select 0),(_centerWorld select 1),0]]execVM "places.sqf";
 
 
 

@@ -6,7 +6,7 @@ private _cnt = 0;
 _CZmarkers = [];
 {
  _txt = Format ["%1_%2",_name,_cnt];
- _marker = [_x,_targetRadias,_txt] call GPF_fnc_makeCZ;
+ _marker = [_x,_targetRadias,_txt,false] call GPF_fnc_makeCZ;
  _cnt = _cnt+1;
  _CZmarkers = _CZmarkers + [_marker];
  sleep 1;
