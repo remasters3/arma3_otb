@@ -68,11 +68,11 @@ if (!isDedicated) then {
 
    private _cnt = 0;
    while {(_cnt < 360)} Do {
-   private _pos = [_pos, 6,_cnt] call BIS_fnc_relPos;
+   private _pos = [_pos, 2,_cnt] call BIS_fnc_relPos;
    private _box = "Land_PaperBox_open_full_F" createVehicleLocal _pos;
    _box addAction ["ACC","[_this select 1] execVM 'goToACC.sqf';"];
    _box setDir _cnt;
    _box setPos _pos;
-   _cnt = _cnt+180;
+   _cnt = _cnt+361;
    };
   };
