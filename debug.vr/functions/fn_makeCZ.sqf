@@ -1,7 +1,8 @@
-// [_pos,_targetRadias,_name] call GPF_fnc_makeCZ;
+// [_pos,_targetRadias,_name,_revert] call GPF_fnc_makeCZ;
 private _pos = param [0];
 private _targetRadias = param [1];
 private _name = param [2];
+private _revert = param[3];
 private _list = [];
  _txt = Format["%1",_name];
  _smc = "colorwhite";
@@ -13,8 +14,7 @@ private _list = [];
  _marker setMarkerBrush "DIAGGRID";
  _marker setMarkerAlpha 0.7;
 
-
-[_marker,_targetRadias] Spawn {_marker = _this select 0; _targetRadias = _this Select 1; _czp = true;
+[_marker,_targetRadias,_revert ] Spawn {_marker = _this select 0; _targetRadias = _this Select 1; _revert  = _this select 2; _czp = true; 
   while {_czp} do {
     if (getMarkerColor _marker == "") then {_czp = false;} Else {
        _pos = GetMarkerPos _marker;
@@ -36,7 +36,10 @@ private _list = [];
        if (_eastcount > _westcount && _eastcount > _restcount && _eastcount > _civicount) Then {_side = east;_marker setMarkerColor "ColorEAST";};
        if (_restcount > _westcount && _restcount > _eastcount && _restcount > _civicount) Then {_side = resistance; _marker setMarkerColor "ColorGUER";};
        if (_civicount > _westcount && _civicount > _eastcount && _civicount > _restcount) Then {_side = civilian; _marker setMarkerColor "ColorCIV";};
-       } Else {_marker setMarkerColor "colorwhite";};
+       } Else 
+	   {
+			if (_revert) Then {_marker setMarkerColor "colorwhite";};
+		};
     };
 	sleep 1;
  };

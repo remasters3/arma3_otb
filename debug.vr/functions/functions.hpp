@@ -27,5 +27,8 @@ class GPF
 	class rescueEvac {};
 	class makeCZ {};
 	class endgame {};
+	class SpawnVehicle {};
+	class WPLoop {};
+	class MaldenRoute {};
   };
 };

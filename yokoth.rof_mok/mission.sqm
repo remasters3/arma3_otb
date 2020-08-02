@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=137;
+		nextID=138;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={12540.875,101.75259,-1693.7217};
-		dir[]={-0.87062728,-0.41785291,-0.259691};
-		up[]={-0.40042847,0.90850759,-0.11944087};
-		aside[]={-0.28584132,1.7185812e-007,0.9582935};
+		pos[]={16030.782,66.623016,1072.3846};
+		dir[]={-0.78862637,-0.44616395,0.42310208};
+		up[]={-0.39315757,0.8949483,0.21093079};
+		aside[]={0.47276467,-2.0200969e-007,0.8811937};
 	};
 };
 binarizationWanted=0;
@@ -101,7 +101,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=39;
+		items=40;
 		class Item0
 		{
 			dataType="Group";
@@ -924,12 +924,12 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={16539.938,35.453278,1101.7104};
+				position[]={16539.938,35.45335,1101.71};
 			};
 			name="GM01_remasters";
 			id=40;
 			type="ModuleCurator_F";
-			atlOffset=2.7091064;
+			atlOffset=2.7089996;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1004,7 +1004,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=2;
+							value=1;
 						};
 					};
 				};
@@ -1016,12 +1016,12 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={16004.092,41.62302,1088.3145};
+				position[]={16004.092,41.622551,1088.314};
 			};
 			name="GM01_sadass";
 			id=41;
 			type="ModuleCurator_F";
-			atlOffset=9.7354431;
+			atlOffset=9.7350006;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1096,7 +1096,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=2;
+							value=1;
 						};
 					};
 				};
@@ -2216,7 +2216,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={-3134.353,23.79117,13716.058};
-				angles[]={0,0.70949864,-0};
+				angles[]={0,0.70949864,0};
 			};
 			side="Empty";
 			class Attributes
@@ -2276,7 +2276,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={-3087.7632,23.79117,13716.048};
-				angles[]={0,0.84487569,-0};
+				angles[]={0,0.84487569,0};
 			};
 			side="Empty";
 			class Attributes
@@ -2696,7 +2696,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={27826.361,23.750183,13712.124};
-				angles[]={-0,5.4849634,-0};
+				angles[]={0,5.4849634,0};
 			};
 			side="Empty";
 			class Attributes
@@ -2808,6 +2808,98 @@ class Mission
 					};
 				};
 				nAttributes=2;
+			};
+		};
+		class Item39
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={15997.26,42.396454,1086.126};
+			};
+			name="GM01_tehStig";
+			id=137;
+			type="ModuleCurator_F";
+			atlOffset=9.7350006;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleCurator_F_Owner";
+					expression="_this setVariable ['Owner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="GPF_Benifits";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleCurator_F_Forced";
+					expression="_this setVariable ['Forced',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleCurator_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleCurator_F_Addons";
+					expression="_this setVariable ['Addons',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=4;
 			};
 		};
 	};
