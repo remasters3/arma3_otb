@@ -46,6 +46,7 @@ if (isDedicated or isServer) then { _offset = 0;
         { _outpost = [_x,0] Call GPF_fnc_worldOutpost; deleteVehicle (_outpost Select 0);deleteVehicle (_outpost Select 1); _outposts = _outposts + _outpost;} Foreach [(_SidePos Select 0),(_SidePos Select 1),(_SidePos Select 2)];
         
         [_SidePos] execVM 'emptyvehicles.sqf';
+		[_SidePos] execVM 'logistics.sqf';
 		//[_SidePos] execVM 'mannedvehicles.sqf';
 		_cz = [(_OuterCentrePos select 6),(_OuterCentrePos select 7)];
 		[_OuterCentrePos] execVM 'CZmarkers.sqf';
