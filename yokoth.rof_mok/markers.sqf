@@ -7,7 +7,6 @@ _markers = [];
 _offset = 10;
 _centerWorld = getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition");
 _markerpos = [(_centerWorld select 0),(_centerWorld select 1),0];
-// _markerpos = [0,0,0,];
 
 _westpos =_markerpos;
 _eastpos =_markerpos;
