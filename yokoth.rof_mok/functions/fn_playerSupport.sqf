@@ -6,9 +6,10 @@ _Model = param[2];
 
 _Side = side _player;
 _DropPos = GetPos _player;
+_heloSpawn = getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition");
 _Group = group _player;
 { deleteVehicle _x } forEach units _Group;
-_DropHeliSpawn = [_DropPos,900,1000, 5, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
+_DropHeliSpawn = [_heloSpawn,900,1000, 5, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
 _DropHeli = [_DropHeliSpawn, 0, _HeliModel, _Side] call bis_fnc_spawnvehicle;
 _DropHeliV = _DropHeli select 0;
 _DropHeliGroup = group _DropHeliV;
