@@ -61,10 +61,31 @@ if (!isDedicated) then {
    waitUntil {(!isNil "MarkersDone")};
    private _pos = [];
    private _ACC = [];
-   If (Side _unit == West      ) Then {_pos = GetMarkerPos "respawn_west"; _unit SetPos _pos;_ACC = carrier_sl_blue;};
-   If (Side _unit == East      ) Then {_pos = GetMarkerPos "respawn_east"; _unit SetPos _pos;_ACC = carrier_sl_red;};
-   If (Side _unit == Resistance) Then {_pos = GetMarkerPos "respawn_guerrila"; _unit SetPos _pos;_ACC = carrier_sl_green;};
-   If (Side _unit == Civilian  ) Then {_pos = GetMarkerPos "respawn_civilian"; _unit SetPos _pos;_ACC = carrier_sl_red;};
+   
+   If (Side _unit == West      ) Then {
+       _pos = GetMarkerPos "respawn_west"; 
+	   _unit SetPos _pos;
+	   _ACC = carrier_sl_blue;
+	   };
+	   
+   If (Side _unit == East      ) Then {
+		_pos = GetMarkerPos "respawn_east"; 
+		_unit SetPos _pos;
+		_ACC = carrier_sl_red;
+		};
+		
+   If (Side _unit == Resistance) Then {
+		_pos = GetMarkerPos "respawn_guerrila"; 
+		_unit SetPos _pos;
+		_ACC = carrier_sl_green;
+		};
+		
+   If (Side _unit == Civilian  ) Then {
+		_pos = GetMarkerPos "respawn_civilian"; 
+		_unit SetPos _pos;
+		_ACC = carrier_sl_red;
+		};
+		
 
    private _cnt = 0;
    while {(_cnt < 360)} Do {
@@ -75,4 +96,9 @@ if (!isDedicated) then {
    _box setPos _pos;
    _cnt = _cnt+361;
    };
+    _trg_spawn = createTrigger ["EmptyDetector", _pos,false];
+    _trg_spawn setTriggerArea [5, 5, _dir, true];
+    _trg_spawn setTriggerActivation [(Side _unit), "PRESENT", true];
+    _trg_spawn setTriggerStatements ["this", "(thislist select 0) setposASL (getPosASL _ACC), ""];
+   
   };
