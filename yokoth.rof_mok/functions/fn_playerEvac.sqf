@@ -9,8 +9,10 @@ if (_Side == east) Then {_smoke = 'SmokeShellRed';};
 if (_Side == resistance) Then {_smoke = 'SmokeShellGreen'};
 if (_Side == civilian) Then {_smoke = 'SmokeShellPurple'};
 
+_helodirs =[0,90,180,270];
+_heloSpawn = [_DropPos,1000,(selectRandom _helodirs)] call BIS_fnc_relPos;
 _EvacHeliSpawn = [_EvacPos,1000,1100, 5, 0, 60 * (pi / 180), 0, []] call BIS_fnc_findSafePos;
-_EvacHeli = [_EvacHeliSpawn, 0, _Model, _Side] call bis_fnc_spawnvehicle;
+_EvacHeli = [_heloSpawn, 0, _Model, _Side] call bis_fnc_spawnvehicle;
 _EvacHeliV = _EvacHeli select 0;
 _EvacHeliGroup = group _EvacHeliV;
 _HeliPadE = "Land_HelipadEmpty_F" createVehicle _EvacPos;
