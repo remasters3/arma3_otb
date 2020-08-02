@@ -85,7 +85,7 @@ if (!isDedicated) then {
     _trg_spawn = createTrigger ["EmptyDetector", _pos,false];
     _trg_spawn setTriggerArea [5, 5, _dir, true];
     _trg_spawn setTriggerActivation [(Side _unit), "PRESENT", true];
-    _trg_spawn setTriggerStatements ["this", "(thislist select 0) setposASL (getPosASL _ACC)"," "];
+    _trg_spawn setTriggerStatements ["this", "systemChat 'hello world'"," "];
 	_unit SetPos _pos;
 
    private _cnt = 0;
