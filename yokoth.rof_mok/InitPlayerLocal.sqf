@@ -84,7 +84,7 @@ if (!isDedicated) then {
     _trg_spawn = createTrigger ["EmptyDetector", _pos,false];
     _trg_spawn setTriggerArea [5, 5, _dir, true];
     _trg_spawn setTriggerActivation ["ANYPLAYER", "PRESENT", true];
-    _trg_spawn setTriggerStatements ["this", "[_this select 1] execVM 'goToACC.sqf'"," "];
+    _trg_spawn setTriggerStatements ["this", "[thisList select 0] execVM 'goToACC.sqf'"," "];
 	_unit SetPos _pos;
 
    private _cnt = 0;
