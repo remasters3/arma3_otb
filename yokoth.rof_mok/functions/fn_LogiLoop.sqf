@@ -45,7 +45,7 @@ _way3 setWaypointCompletionRadius 10;
 _way3 setWaypointTimeout _Wait;
 _way3 setWaypointStatements ["true", "_veh = vehicle this; _veh SetDamage 1; _grp = group this;{deleteVehicle _x;} forEach units _grp"];
 // _HeliPads = [_HeliPadE,_HeliPadT];
-[_EvacHeliGroup,_HeliPads] Spawn {_EvacHeliGroup = _this select 0; _HeliPads = _this Select 1;
+[_EvacHeliGroup] Spawn {_EvacHeliGroup = _this select 0; _HeliPads = _this Select 1;
 	while {_cnt = count units _EvacHeliGroup;_cnt != 0} Do {Sleep 1;};
 	// {deleteVehicle _x;} foreach _HeliPads;
 };
