@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=138;
+		nextID=158;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={16030.782,66.623016,1072.3846};
-		dir[]={-0.78862637,-0.44616395,0.42310208};
-		up[]={-0.39315757,0.8949483,0.21093079};
-		aside[]={0.47276467,-2.0200969e-007,0.8811937};
+		pos[]={27818.273,32.950535,13761.421};
+		dir[]={-0.26334518,-0.58025044,0.77073854};
+		up[]={-0.18760246,0.81444573,0.54905957};
+		aside[]={0.94632202,2.0667212e-006,0.32333755};
 	};
 };
 binarizationWanted=0;
@@ -29,13 +29,14 @@ addons[]=
 	"A3_Characters_F_Exp_Civil",
 	"A3_Modules_F_Curator_Curator",
 	"A3_Boat_F_Jets_Carrier_01",
-	"A3_Structures_F_Bootcamp_VR_Helpers"
+	"A3_Structures_F_Bootcamp_VR_Helpers",
+	"CUP_CAMisc"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=5;
+		items=6;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -71,6 +72,11 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item5
+		{
+			className="CUP_CAMisc";
+			name="CUP_CAMisc";
+		};
 	};
 };
 randomSeed=2269325;
@@ -101,7 +107,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=40;
+		items=43;
 		class Item0
 		{
 			dataType="Group";
@@ -2900,6 +2906,186 @@ class Mission
 					};
 				};
 				nAttributes=4;
+			};
+		};
+		class Item40
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={-3205.488,23.780735,13717.453};
+				angles[]={0,0.83629197,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="plane_blue_04";
+				disableSimulation=1;
+			};
+			id=144;
+			type="HeliHEmpty";
+			atlOffset=0.018989563;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="hideObject";
+					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item41
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={12348.243,22.571995,-1749.9189};
+				angles[]={0,5.7503362,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="plane_green_04";
+				disableSimulation=1;
+			};
+			id=149;
+			type="HeliHEmpty";
+			atlOffset=0.49749756;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="hideObject";
+					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item42
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={27814.58,23.517834,13771.224};
+				angles[]={0,3.8577013,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="plane_red_04";
+				disableSimulation=1;
+			};
+			id=157;
+			type="HeliHEmpty";
+			atlOffset=0.12965965;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="hideObject";
+					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
 			};
 		};
 	};
