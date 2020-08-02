@@ -79,13 +79,12 @@ if (!isDedicated) then {
 		
    If (Side _unit == Civilian  ) Then {
 		_pos = GetMarkerPos "respawn_civilian"; 
-		
 		_ACC = carrier_sl_red;
 		};
     _trg_spawn = createTrigger ["EmptyDetector", _pos,false];
     _trg_spawn setTriggerArea [5, 5, _dir, true];
-    _trg_spawn setTriggerActivation [(Side _unit), "PRESENT", true];
-    _trg_spawn setTriggerStatements ["this", "systemChat 'hello world'"," "];
+    _trg_spawn setTriggerActivation ["ANYPLAYER", "PRESENT", true];
+    _trg_spawn setTriggerStatements ["this", "systemChat 'hello world';"," "];
 	_unit SetPos _pos;
 
    private _cnt = 0;
