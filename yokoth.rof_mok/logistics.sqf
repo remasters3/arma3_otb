@@ -1,6 +1,6 @@
 // [_EvacPos,_TargetPos,_Side,_Model,_Wait] call GPF_fnc_LogiLoop;
 _SidePos = _this select 0;
-_timeframe = [13,14,15];
+_timeframe = [14,15,16];
 _params = [
     [(getPosASL plane_blue_04),(_SidePos Select 0),west,"B_Heli_Transport_01_camo_F",_timeframe],
 	[(getPosASL plane_red_04),(_SidePos Select 1),east,"O_Heli_Transport_04_covered_F",_timeframe],
@@ -9,5 +9,6 @@ _params = [
 
 while {true} do {
  {_x call GPF_fnc_LogiLoop;} foreach _params;
- sleep 300;
+ sleep 120;
+ {deleteVehicle _x;} forEach allDead;
 };
