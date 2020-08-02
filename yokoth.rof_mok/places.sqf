@@ -27,9 +27,9 @@ _SidePos =  [
 ];
 
 _SideFlagModels = [
-	"Flag_NATO_F",
-	"Flag_CSAT_F",
-	"Flag_AAF_F"
+	"HeliHEmpty",
+	"HeliHEmpty",
+	"HeliHEmpty"
 ];
 
 if (isDedicated or isServer) then { _offset = 0;
