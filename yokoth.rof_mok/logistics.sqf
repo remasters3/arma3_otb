@@ -9,6 +9,6 @@ _params = [
 
 while {true} do {
  {_x call GPF_fnc_LogiLoop;} foreach _params;
- sleep 120;
+ sleep 180;
  {deleteVehicle _x;} forEach allDead;
 };

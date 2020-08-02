@@ -27,7 +27,7 @@ _way1 setWaypointCombatMode "GREEN";
 _way1 setWaypointSpeed "FULL";
 _way1 setWaypointCompletionRadius 1;
 _way1 setWaypointTimeout _Wait;
-_way1 setWaypointStatements ["true", "_veh = vehicle this; [_veh] spawn {_veh = _this select 0; _veh setfuel 0; sleep 60;_veh setfuel 1;}"];
+_way1 setWaypointStatements ["true", "_veh = vehicle this; [_veh] spawn {_veh = _this select 0; _veh setfuel 0; sleep 60;_veh setdamage 0;_veh setfuel 1;}"];
 
 _way2 = _EvacHeliGroup addWaypoint [_TargetPos, 0];
 _way2 setWaypointType "TR UNLOAD";
