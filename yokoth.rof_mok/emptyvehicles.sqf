@@ -51,7 +51,7 @@ _Timeout = 10;
 	{
 		private _ph = _x select 0;
 		private _model = _x select 1;
-		[(getposASL _ph),(getDir _ph),(selectRandom _model),10] call GPF_fnc_SpawnVehicle;
+		[(getposASL _ph),(getDir _ph),(selectRandom _model),20] call GPF_fnc_SpawnVehicle;
 	} foreach[
 	[plane_blue_00,["B_Plane_CAS_01_dynamicLoadout_F"]],
 	[plane_blue_01,["B_Plane_Fighter_01_Stealth_F"]],
