@@ -43,9 +43,9 @@ _Timeout = 10;
  _Models = _this Select 1;
  _Timeout = _this select 2;
  while {true} Do { 
-    //[10,(_Models Select 0),(_SidePos Select 0),200,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;
-	//[10,(_Models Select 1),(_SidePos Select 1),200,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;
-	//[10,(_Models Select 2),(_SidePos Select 2),200,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;
+    [10,(_Models Select 0),(_SidePos Select 0),200,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;
+	[10,(_Models Select 1),(_SidePos Select 1),200,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;
+	[10,(_Models Select 2),(_SidePos Select 2),200,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;
 	
 	//Blue AirCraft Carrier
 	{
@@ -83,24 +83,24 @@ _Timeout = 10;
 	[plane_green_03,["I_Heli_light_03_dynamicLoadout_F"]]
 	];
 	
-	{
-		private _ms = _x select 0;
-		private _cent = _x select 1;
-		private _count = 0;
-		private _div = 360/8; //count _ms;
-		private _select = 0;
-		private _pos = [];
-		while {_count < 360} Do {
-		_pos = [_cent, 50, _count] call BIS_fnc_relPos;
-		private _tmp = createVehicle ["HeliHEmpty", _pos, [], 0, "FORM"];
-		[(getposASL _tmp),_count,(selectrandom _ms),10] call GPF_fnc_SpawnVehicle;
-		deleteVehicle _tmp;
-		_count = _count+_div;
-		_select = _select+1;
-			
-		}; 
-	
-	} foreach [[(_Models Select 0),(_SidePos Select 0)],[(_Models Select 1),(_SidePos Select 1)],[(_Models Select 2),(_SidePos Select 2)]];	
+	// {
+	// 	private _ms = _x select 0;
+	// 	private _cent = _x select 1;
+	// 	private _count = 0;
+	// 	private _div = 360/8; //count _ms;
+	// 	private _select = 0;
+	// 	private _pos = [];
+	// 	while {_count < 360} Do {
+	// 	_pos = [_cent, 50, _count] call BIS_fnc_relPos;
+	// 	private _tmp = createVehicle ["HeliHEmpty", _pos, [], 0, "FORM"];
+	// 	[(getposASL _tmp),_count,(selectrandom _ms),10] call GPF_fnc_SpawnVehicle;
+	// 	deleteVehicle _tmp;
+	// 	_count = _count+_div;
+	// 	_select = _select+1;
+	// 		
+	// 	}; 
+	// 
+	// } foreach [[(_Models Select 0),(_SidePos Select 0)],[(_Models Select 1),(_SidePos Select 1)],[(_Models Select 2),(_SidePos Select 2)]];	
 
 	
 	
