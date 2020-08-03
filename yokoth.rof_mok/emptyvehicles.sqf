@@ -43,9 +43,9 @@ _Timeout = 600;
  _Models = _this Select 1;
  _Timeout = _this select 2;
  while {true} Do { 
-    [10,(_Models Select 0),(_SidePos Select 0),200,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;
-	[10,(_Models Select 1),(_SidePos Select 1),200,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;
-	[10,(_Models Select 2),(_SidePos Select 2),200,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;
+    //[10,(_Models Select 0),(_SidePos Select 0),200,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;
+	//[10,(_Models Select 1),(_SidePos Select 1),200,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;
+	//[10,(_Models Select 2),(_SidePos Select 2),200,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;
 	
 	//Blue AirCraft Carrier
 	{
@@ -82,8 +82,31 @@ _Timeout = 600;
 	[plane_green_02,["I_Heli_light_03_unarmed_F"]],
 	[plane_green_03,["I_Heli_light_03_dynamicLoadout_F"]]
 	];
+	
+	{
+		private _ms = _x select 0;
+		private _cent = _x select 1;
+		private _count = 0;
+		private _div = count _ms;
+		private _rnd = 360/_div;
+		private _select = 0;
+		private _pos = [];
+		while {_count < 360} Do {
+		_WaveGroup = createGroup [_Side, false];
+		_pos = [(_ms select _select), 60, _count] call BIS_fnc_relPos;
+		[_pos,_count,(_ms select _select),10] call GPF_fnc_SpawnVehicle;
+		_count = _count+_div;
+		_select = _select+1;
+			
+	} foreach [
+		[(_Models Select 0),(_SidePos Select 0)],
+		[(_Models Select 1),(_SidePos Select 1)],
+		[(_Models Select 2),(_SidePos Select 2)]
+	];	
 
-
+	
+	
+	
 	//[10,(_Models Select 3),(_SidePos Select 3),100,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;
  Sleep _Timeout;};
 };
