@@ -43,15 +43,15 @@ _Timeout = 600;
  _Models = _this Select 1;
  _Timeout = _this select 2;
  while {true} Do { 
-    [10,(_Models Select 0),(_SidePos Select 0),200,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;
+    /*[10,(_Models Select 0),(_SidePos Select 0),200,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;
 	[10,(_Models Select 1),(_SidePos Select 1),200,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;
-	[10,(_Models Select 2),(_SidePos Select 2),200,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;
+	[10,(_Models Select 2),(_SidePos Select 2),200,_Timeout-1 ] Call GPF_fnc_EmptyVehicles;*/
 	
 	//Blue AirCraft Carrier
 	{
 		private _ph = _x select 0;
 		private _model = _x select 1;
-		[(getposASL _ph),(getDir _ph),(selectRandom _model),20] call GPF_fnc_SpawnVehicle;
+		[(getposASL _ph),(getDir _ph),(selectRandom _model),20] call GPF_fnc_SpawnVehicleASL;
 	} foreach[
 	[plane_blue_00,["B_Plane_CAS_01_dynamicLoadout_F"]],
 	[plane_blue_01,["B_Plane_Fighter_01_Stealth_F"]],
@@ -63,7 +63,7 @@ _Timeout = 600;
 			{
 		private _ph = _x select 0;
 		private _model = _x select 1;
-		[(getposASL _ph),(getDir _ph),(selectRandom _model),10] call GPF_fnc_SpawnVehicle;
+		[(getposASL _ph),(getDir _ph),(selectRandom _model),10] call GPF_fnc_SpawnVehicleASL;
 	} foreach[
 	[plane_red_00,["O_Plane_Fighter_02_Stealth_F"]],
 	[plane_red_01,["O_Plane_CAS_02_dynamicLoadout_F"]],
@@ -75,7 +75,7 @@ _Timeout = 600;
 		{
 		private _ph = _x select 0;
 		private _model = _x select 1;
-		[(getposASL _ph),(getDir _ph),(selectRandom _model),10] call GPF_fnc_SpawnVehicle;
+		[(getposASL _ph),(getDir _ph),(selectRandom _model),10] call GPF_fnc_SpawnVehicleASL;
 	} foreach[
 	[plane_green_00,["I_Plane_Fighter_04_F"]],
 	[plane_green_01,["I_Plane_Fighter_03_dynamicLoadout_F"]],
@@ -83,24 +83,24 @@ _Timeout = 600;
 	[plane_green_03,["I_Heli_light_03_dynamicLoadout_F"]]
 	];
 	
-	// {
-	// 	private _ms = _x select 0;
-	// 	private _cent = _x select 1;
-	// 	private _count = 0;
-	// 	private _div = 360/8; //count _ms;
-	// 	private _select = 0;
-	// 	private _pos = [];
-	// 	while {_count < 360} Do {
-	// 	_pos = [_cent, 50, _count] call BIS_fnc_relPos;
-	// 	private _tmp = createVehicle ["HeliHEmpty", _pos, [], 0, "FORM"];
-	// 	[(getposASL _tmp),_count,(selectrandom _ms),10] call GPF_fnc_SpawnVehicle;
-	// 	deleteVehicle _tmp;
-	// 	_count = _count+_div;
-	// 	_select = _select+1;
-	// 		
-	// 	}; 
-	// 
-	// } foreach [[(_Models Select 0),(_SidePos Select 0)],[(_Models Select 1),(_SidePos Select 1)],[(_Models Select 2),(_SidePos Select 2)]];	
+	{
+		private _ms = _x select 0;
+		private _cent = _x select 1;
+		private _count = 0;
+		private _div = 360/8; //count _ms;
+		private _select = 0;
+		private _pos = [];
+		while {_count < 360} Do {
+		_pos = [_cent, 50, _count] call BIS_fnc_relPos;
+		private _tmp = createVehicle ["HeliHEmpty", _pos, [], 0, "FORM"];
+		[_pos,_count,(selectrandom _ms),10] call GPF_fnc_SpawnVehicle;
+		deleteVehicle _tmp;
+		_count = _count+_div;
+		_select = _select+1;
+			
+		}; 
+	
+	} foreach [[(_Models Select 0),(_SidePos Select 0)],[(_Models Select 1),(_SidePos Select 1)],[(_Models Select 2),(_SidePos Select 2)]];	
 
 	
 	

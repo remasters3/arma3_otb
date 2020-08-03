@@ -14,7 +14,7 @@ if ((count _list) == 0) Then {
 		_veh = createVehicle [_model, _tpos, [], 0, 'FORM'];
 		if ((count _params) == 5) Then {_veh setObjectTextureGlobal [0,_txtr];};
 		_veh SetDir _dir;
-		_veh setpos _pos;
+		_veh setposASL _pos;
 		_veh
 	};
 _veh 
