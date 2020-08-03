@@ -33,7 +33,7 @@ _CivLightVeh = ["C_Hatchback_01_F2",
 				 
 _Models = [_WestLightVeh,_EastLightVeh,_ResLightVeh,_CivLightVeh];
  
-_Timeout = 10;
+_Timeout = 600;
 //_txt = FORMAT ["%1",_SidePos];
 //hint _txt;
 
