@@ -33,7 +33,7 @@ _CivLightVeh = ["C_Hatchback_01_F2",
 				 
 _Models = [_WestLightVeh,_EastLightVeh,_ResLightVeh,_CivLightVeh];
  
-_Timeout = 600;
+_Timeout = 10;
 //_txt = FORMAT ["%1",_SidePos];
 //hint _txt;
 
@@ -87,22 +87,20 @@ _Timeout = 600;
 		private _ms = _x select 0;
 		private _cent = _x select 1;
 		private _count = 0;
-		private _div = count _ms;
-		private _rnd = 360/_div;
+		private _div = 360/8; //count _ms;
 		private _select = 0;
 		private _pos = [];
 		while {_count < 360} Do {
-		_WaveGroup = createGroup [_Side, false];
-		_pos = [(_ms select _select), 60, _count] call BIS_fnc_relPos;
-		[_pos,_count,(_ms select _select),10] call GPF_fnc_SpawnVehicle;
+		_pos = [_cent, 50, _count] call BIS_fnc_relPos;
+		private _tmp = createVehicle ["HeliHEmpty", _pos, [], 0, "FORM"];
+		[(getposASL _tmp),_count,(selectrandom _ms),10] call GPF_fnc_SpawnVehicle;
+		deleteVehicle _tmp;
 		_count = _count+_div;
 		_select = _select+1;
 			
-	} foreach [
-		[(_Models Select 0),(_SidePos Select 0)],
-		[(_Models Select 1),(_SidePos Select 1)],
-		[(_Models Select 2),(_SidePos Select 2)]
-	];	
+		}; 
+	
+	} foreach [[(_Models Select 0),(_SidePos Select 0)],[(_Models Select 1),(_SidePos Select 1)],[(_Models Select 2),(_SidePos Select 2)]];	
 
 	
 	
