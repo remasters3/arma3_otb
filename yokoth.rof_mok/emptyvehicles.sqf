@@ -68,7 +68,7 @@ _Timeout = 600;
 	[plane_red_00,["O_Plane_Fighter_02_Stealth_F"]],
 	[plane_red_01,["O_Plane_CAS_02_dynamicLoadout_F"]],
 	[plane_red_02,["O_Heli_Attack_02_dynamicLoadout_F","O_Heli_Light_02_dynamicLoadout_F"]],
-	[plane_red_03,["O_Heli_Transport_04_bench_F","O_Heli_Transport_04_covered_F"]]
+	[plane_red_03,["O_Heli_Transport_04_bench_F","O_Heli_Transport_04_covered_F","o_heli_light_02_unarmed_f"]]
 	];
 	
 	//Green AirCraft Carrier
