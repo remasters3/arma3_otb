@@ -18,9 +18,9 @@ private _lp = [];
 	If (Side _driver == Civilian  ) Then {
 	
 	};
-	waituntil {((distance _veh _lp) <= 3)};
+	waituntil {((distance _veh _lp) <= 1)};
 	_veh setfuel 0;
-	sleep 60;
+	sleep 30;
 	_veh setdamage 0;
 	_veh setfuel 1;
 };
