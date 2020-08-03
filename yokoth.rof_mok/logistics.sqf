@@ -1,6 +1,6 @@
 // [_EvacPos,_TargetPos,_Side,_Model,_Wait] call GPF_fnc_LogiLoop;
 _SidePos = _this select 0;
-_timeframe = [33,34,35];
+_timeframe = [29,30,31];
 _params = [
     [(getPosASL plane_blue_04),(_SidePos Select 0),west,"B_Heli_Transport_01_camo_F",_timeframe],
 	[(getPosASL plane_red_04),(_SidePos Select 1),east,"O_Heli_Transport_04_covered_F",_timeframe],

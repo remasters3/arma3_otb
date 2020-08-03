@@ -90,7 +90,7 @@ if (!isDedicated) then {
    private _cnt = 0;
    while {(_cnt < 360)} Do {
    private _pos = [_pos, 1,_cnt] call BIS_fnc_relPos;
-   private _box = "Land_PaperBox_open_full_F" createVehicleLocal _pos;
+   private _box = "PARACHUTE_TARGET" createVehicleLocal _pos;
    // _box addAction ["ACC","[_this select 1] execVM 'goToACC.sqf';"];
    _box setDir _cnt;
    _box setPosASL getposASL _ACC;
