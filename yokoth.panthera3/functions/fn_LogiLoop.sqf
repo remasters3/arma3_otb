@@ -1,3 +1,4 @@
+// [_EvacPos,_TargetPos,_Side,_Model,_Wait] call GPF_fnc_LogiLoop;
 private _EvacPos = _this Select 0;
 private _TargetPos = _this Select 1;
 private _Side = _this Select 2;
@@ -15,8 +16,8 @@ _EvacHeliSpawn = [_EvacPos,1000,1100, 5, 0, 60 * (pi / 180), 0, []] call BIS_fnc
 _EvacHeli = [_heloSpawn, 0, _Model, _Side] call bis_fnc_spawnvehicle;
 _EvacHeliV = _EvacHeli select 0;
 _EvacHeliGroup = group _EvacHeliV;
-_HeliPadE = "Land_HelipadEmpty_F" createVehicle _EvacPos;
-_HeliPadT = "Land_HelipadEmpty_F" createVehicle _TargetPos;
+// _HeliPadE = "Land_HelipadEmpty_F" createVehicle _EvacPos;
+// _HeliPadT = "Land_HelipadEmpty_F" createVehicle _TargetPos;
 _Signal = _smoke createVehicle _EvacPos;
 
 _way1 = _EvacHeliGroup addWaypoint [_EvacPos, 0];
@@ -26,6 +27,7 @@ _way1 setWaypointCombatMode "GREEN";
 _way1 setWaypointSpeed "FULL";
 _way1 setWaypointCompletionRadius 1;
 _way1 setWaypointTimeout _Wait;
+_way1 setWaypointStatements ["true", "_veh = vehicle this; [_veh] spawn {_veh = _this select 0; _veh setfuel 0; sleep 60;_veh setdamage 0;_veh setfuel 1;}"];
 
 _way2 = _EvacHeliGroup addWaypoint [_TargetPos, 0];
 _way2 setWaypointType "TR UNLOAD";
@@ -43,8 +45,7 @@ _way3 setWaypointSpeed "FULL";
 _way3 setWaypointCompletionRadius 10;
 _way3 setWaypointTimeout _Wait;
 _way3 setWaypointStatements ["true", "_veh = vehicle this; _veh SetDamage 1; _grp = group this;{deleteVehicle _x;} forEach units _grp"];
-_HeliPads = [_HeliPadE,_HeliPadT];
-[_EvacHeliGroup,_HeliPads] Spawn {_EvacHeliGroup = _this select 0; _HeliPads = _this Select 1;
+// _HeliPads = [_HeliPadE,_HeliPadT];
+[_EvacHeliGroup] Spawn {_EvacHeliGroup = _this select 0;
 	while {_cnt = count units _EvacHeliGroup;_cnt != 0} Do {Sleep 1;};
-	{deleteVehicle _x;} foreach _HeliPads;
 };
